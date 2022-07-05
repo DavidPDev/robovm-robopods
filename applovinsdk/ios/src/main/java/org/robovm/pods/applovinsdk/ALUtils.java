@@ -50,7 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected ALUtils(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "isSimulator")
+    public static native boolean isSimulator();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

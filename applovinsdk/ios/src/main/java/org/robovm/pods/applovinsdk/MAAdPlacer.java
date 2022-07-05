@@ -77,6 +77,8 @@ import org.robovm.apple.coreanimation.*;
     public native void clearAds();
     @Method(selector = "clearAdsInSections:")
     public native void clearAdsInSections(NSIndexSet sections);
+    @Method(selector = "clearAdsInSectionAfterIndexPath:")
+    public native NSArray<NSIndexPath> clearAdsInSectionAfterIndexPath(NSIndexPath indexPath);
     @Method(selector = "isAdIndexPath:")
     public native boolean isAdIndexPath(NSIndexPath indexPath);
     @Method(selector = "isFilledIndexPath:")
