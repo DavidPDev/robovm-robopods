@@ -13,17 +13,11 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import <GoogleMobileAds/GoogleMobileAds.h>
 
-typedef NS_ENUM(NSInteger, GADFBAdFormat) {
-  GADFBAdFormatNative,        ///< Native.
-  GADFBAdFormatNativeBanner,  ///< Native Banner.
-};
+/// Meta Audience Network native ad subtitle key used with the extra assets dictionary declared in
+/// GADMediatedNativeAd.h.
+extern NSString *const GADFBSubtitle;
 
-/// Network extras for the Facebook adapter.
-@interface GADFBNetworkExtras : NSObject <GADAdNetworkExtras>
-
-/// The native ad format to request. Has no effect when applied to non-native ad requests.
-@property(nonatomic, assign) GADFBAdFormat nativeAdFormat;
-
-@end
+/// Meta Audience Network native ad social context key used with the extra assets dictionary
+/// declared in GADMediatedNativeAd.h.
+extern NSString *const GADFBSocialContext;

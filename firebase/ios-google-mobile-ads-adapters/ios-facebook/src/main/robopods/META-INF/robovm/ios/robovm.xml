@@ -1,5 +1,5 @@
 <config>
     <frameworks>
-        <framework>FacebookAdapter</framework>
+        <framework>MetaAdapter</framework>
     </frameworks>
 </config>

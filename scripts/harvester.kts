@@ -1075,42 +1075,33 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-applovin",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "applovin-adapter.yaml",
-            version = {
-                downloadFolder.extend("AppLovinAdapter/CHANGELOG.md").readLines()
-                    .find { it.contains("Version ") }
-                    ?.let { it.substringAfter("Version ").substringBefore(" ").substringBefore("]") }
-                    ?: error("Failed to find out AppLovinAdapter version!")
-            },
+            version = { downloadFolder.extend("AppLovinAdapter/version").readText() },
             instruction = """
                 1. download AppLovinAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/applovin#applovin-ios-mediation-adapter-changelog
-                2. extract and rename folder to AppLovinAdapter 
-                3. expected location ${downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/")}
+                2. extract and rename folder to AppLovinAdapter
+                3. create a file ${downloadFolder.extend("AppLovinAdapter/version")} and put verions there, e.g. 4.0.0
+                4. expected location ${downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/")}
             """.trimIndent(),
             readmeFileVersionUpdater = { frm, modFolder, version ->
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
-            },
-
-            )
+            }
+        )
     }
-    registry["FacebookAdapter"] = { framework ->
+    registry["MetaAdapter"] = { framework ->
         val artifact = "$framework.framework"
         val artifactLocation =
-            downloadFolder.extend("FacebookAdapter/FacebookAdapter.xcframework/ios-arm64_armv7/$artifact")
+            downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64_armv7/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-facebook",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "facebook-adapter.yaml",
-            version = {
-                downloadFolder.extend("FacebookAdapter/CHANGELOG.md").readLines()
-                    .find { it.contains("Version ") }
-                    ?.let { it.substringAfter("Version ").substringBefore(" ").substringBefore("]") }
-                    ?: error("Failed to find out FacebookAdapter version!")
-            },
+            version = { downloadFolder.extend("MetaAdapter/version").readText() },
             instruction = """
-                1. download FacebookAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/facebook#facebook-ios-mediation-adapter-changelog
-                2. extract and rename folder to FacebookAdapter 
-                3. expected location ${downloadFolder.extend("FacebookAdapter/FacebookAdapter.xcframework/ios-arm64_armv7/")}
+                1. download MetaAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/meta#meta-audience-network-ios-mediation-adapter-changelog
+                2. extract and rename folder to MetaAdapter 
+                3. create a file ${downloadFolder.extend("MetaAdapter/version")} and put verions there, e.g. 4.0.0
+                4. expected location ${downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64_armv7/")}
             """.trimIndent(),
             readmeFileVersionUpdater = { frm, modFolder, version ->
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
