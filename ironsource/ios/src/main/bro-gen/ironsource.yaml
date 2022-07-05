@@ -127,6 +127,10 @@ classes:
                 name: loadConsentView
             '+showConsentViewWithViewController:andType:':
                 name: showConsentView
+    ISAdInfo:
+        methods:
+            '-initWithImpressionData:':
+                name: init
 protocols:
     ISAdapterAdDelegate:
         methods:
@@ -222,6 +226,58 @@ protocols:
             '-rewardedVideoDidFailToLoadWithError:':
                 name: rewardedVideoDidFailToLoad
     ISSegmentDelegate: {}
+    LevelPlayBannerDelegate:
+        methods:
+            '-didLoad:withAdInfo:':
+                name: didLoad
+            '-didFailToLoadWithError:':
+                name: didFailToLoad
+            '-didClickWithAdInfo:':
+                name: didClick
+            '-didLeaveApplicationWithAdInfo:':
+                name: didLeaveApplication
+            '-didPresentScreenWithAdInfo:':
+                name: didPresentScreen
+            '-didDismissScreenWithAdInfo:':
+                name: didDismissScreen
+    LevelPlayInterstitialDelegate:
+        methods:
+            '-didLoadWithAdInfo:':
+                name: didLoad
+            '-didFailToLoadWithError:':
+                name: didFailToLoad
+            '-didOpenWithAdInfo:':
+                name: didOpen
+            '-didShowWithAdInfo:':
+                name: didShow
+            '-didFailToShowWithError:andAdInfo:':
+                name: didFailToShow
+            '-didClickWithAdInfo:':
+                name: didClick
+            '-didCloseWithAdInfo:':
+                name: didClose
+    LevelPlayRewardedVideoAutomaticDelegate:
+        methods:
+            '-hasAdAvailableWithAdInfo:':
+                name: hasAdAvailable
+    LevelPlayRewardedVideoDelegate:
+        methods:
+            '-didReceiveRewardForPlacement:withAdInfo:':
+                name: didReceiveReward
+            '-didFailToShowWithError:andAdInfo:':
+                name: didFailToShow
+            '-didOpenWithAdInfo:':
+                name: didOpen
+            '-didClick:withAdInfo:':
+                name: didClick
+            '-didCloseWithAdInfo:':
+                name: didClose
+    LevelPlayRewardedVideoManualDelegate:
+        methods:
+            '-didLoadWithAdInfo:':
+                name: didLoad
+            '-didFailToLoadWithError:':
+                name: didFailToLoad
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -249,6 +305,11 @@ constants:
         class: IronSource
     kBannerWillMoveToSuperView:
         class: ISBannerView
+    kImpressionDataKey(.*):
+        class: ISImpressionData
+        static_class: Keys
+        name: '#{g[0]}'
+
     kSize(.*):
         class: ISBannerSize
     GitHash:

@@ -37,38 +37,19 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISImpressionData/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISAdInfo/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class ISImpressionDataPtr extends Ptr<ISImpressionData, ISImpressionDataPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ISImpressionData.class); }/*</bind>*/
-    /*<constants>*/
-    public static class Keys {
-        public static final String AuctionId = "auctionId";
-        public static final String AdUnit = "adUnit";
-        public static final String Country = "country";
-        public static final String Ab = "ab";
-        public static final String SegmentName = "segmentName";
-        public static final String Placement = "placement";
-        public static final String AdNetwork = "adNetwork";
-        public static final String InstanceName = "instanceName";
-        public static final String InstanceId = "instanceId";
-        public static final String Revenue = "revenue";
-        public static final String Precision = "precision";
-        public static final String LifetimeRevenue = "lifetimeRevenue";
-        public static final String EncryptedCPM = "encryptedCPM";
-        public static final String ConversionValue = "conversionValue";
-    }
-    /*</constants>*/
+    /*<ptr>*/public static class ISAdInfoPtr extends Ptr<ISAdInfo, ISAdInfoPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ISAdInfo.class); }/*</bind>*/
+    /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public ISImpressionData() {}
-    protected ISImpressionData(Handle h, long handle) { super(h, handle); }
-    protected ISImpressionData(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithDictionary:")
-    public ISImpressionData(NSDictionary<?, ?> dictionary) { super((SkipInit) null); initObject(init(dictionary)); }
+    public ISAdInfo() {}
+    protected ISAdInfo(Handle h, long handle) { super(h, handle); }
+    protected ISAdInfo(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithImpressionData:")
-    public ISImpressionData(ISImpressionData impressionData) { super((SkipInit) null); initObject(init(impressionData)); }
+    public ISAdInfo(ISImpressionData impressionData) { super((SkipInit) null); initObject(init(impressionData)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "auction_id")
@@ -83,8 +64,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getInstance_id();
     @Property(selector = "country")
     public native String getCountry();
-    @Property(selector = "placement")
-    public native String getPlacement();
     @Property(selector = "revenue")
     public native NSNumber getRevenue();
     @Property(selector = "precision")
@@ -99,16 +78,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getEncrypted_cpm();
     @Property(selector = "conversion_value")
     public native NSNumber getConversion_value();
-    @Property(selector = "all_data")
-    public native NSDictionary<?, ?> getAll_data();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithDictionary:")
-    protected native @Pointer long init(NSDictionary<?, ?> dictionary);
     @Method(selector = "initWithImpressionData:")
     protected native @Pointer long init(ISImpressionData impressionData);
-    @Method(selector = "replacePlacementMacro:value:")
-    public native void replacePlacementMacro(String macro, String value);
     /*</methods>*/
 }

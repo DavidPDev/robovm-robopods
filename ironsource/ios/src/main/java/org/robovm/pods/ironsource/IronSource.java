@@ -48,7 +48,7 @@ import org.robovm.apple.coreanimation.*;
     public static final String IS_INTERSTITIAL = "interstitial";
     public static final String IS_OFFERWALL = "offerwall";
     public static final String IS_BANNER = "banner";
-    public static final String getSdkVersion = "7.2.2";
+    public static final String getSdkVersion = "7.2.3";
     public static final String DataSource_MOPUB = "MoPub";
     /*</constants>*/
     /*<constructors>*/
@@ -105,6 +105,8 @@ import org.robovm.apple.coreanimation.*;
     public static native void initISDemandOnly(String appKey, NSArray<NSString> adUnits);
     @Method(selector = "setRewardedVideoDelegate:")
     public static native void setRewardedVideoDelegate(ISRewardedVideoDelegate delegate);
+    @Method(selector = "setLevelPlayRewardedVideoAutomaticDelegate:")
+    public static native void setLevelPlayRewardedVideoAutomaticDelegate(LevelPlayRewardedVideoAutomaticDelegate delegate);
     @Method(selector = "showRewardedVideoWithViewController:")
     public static native void showRewardedVideo(UIViewController viewController);
     @Method(selector = "showRewardedVideoWithViewController:placement:")
@@ -131,10 +133,14 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean hasISDemandOnlyRewardedVideo(String instanceId);
     @Method(selector = "setRewardedVideoManualDelegate:")
     public static native void setRewardedVideoManualDelegate(ISRewardedVideoManualDelegate delegate);
+    @Method(selector = "setLevelPlayRewardedVideoManualDelegate:")
+    public static native void setLevelPlayRewardedVideoManualDelegate(LevelPlayRewardedVideoManualDelegate delegate);
     @Method(selector = "loadRewardedVideo")
     public static native void loadRewardedVideo();
     @Method(selector = "setInterstitialDelegate:")
     public static native void setInterstitialDelegate(ISInterstitialDelegate delegate);
+    @Method(selector = "setLevelPlayInterstitialDelegate:")
+    public static native void setLevelPlayInterstitialDelegate(LevelPlayInterstitialDelegate delegate);
     @Method(selector = "loadInterstitial")
     public static native void loadInterstitial();
     @Method(selector = "showInterstitialWithViewController:")
@@ -167,6 +173,8 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean hasOfferwall();
     @Method(selector = "setBannerDelegate:")
     public static native void setBannerDelegate(ISBannerDelegate delegate);
+    @Method(selector = "setLevelPlayBannerDelegate:")
+    public static native void setLevelPlayBannerDelegate(LevelPlayBannerDelegate delegate);
     @Method(selector = "loadBannerWithViewController:size:")
     public static native void loadBanner(UIViewController viewController, ISBannerSize size);
     @Method(selector = "loadBannerWithViewController:size:placement:")
