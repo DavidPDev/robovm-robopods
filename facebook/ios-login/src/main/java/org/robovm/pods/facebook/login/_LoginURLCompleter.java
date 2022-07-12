@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.core;
+package org.robovm.pods.facebook.login;
 
 /*<imports>*/
 import java.io.*;
@@ -31,28 +31,35 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAccessTokenSetting/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC13FBSDKLoginKit18_LoginURLCompleter")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/_LoginURLCompleter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements FBSDKLoginCompleting/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class _LoginURLCompleterPtr extends Ptr<_LoginURLCompleter, _LoginURLCompleterPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(_LoginURLCompleter.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    protected _LoginURLCompleter() {}
+    protected _LoginURLCompleter(Handle h, long handle) { super(h, handle); }
+    protected _LoginURLCompleter(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "completeLoginWithHandler:")
+    public native void completeLogin(@Block VoidBlock1<FBSDKLoginCompletionParameters> handler);
+    @Method(selector = "completeLoginWithNonce:codeVerifier:handler:")
+    public native void completeLogin(String nonce, String codeVerifier, @Block VoidBlock1<FBSDKLoginCompletionParameters> handler);
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

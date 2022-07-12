@@ -51,10 +51,16 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "getMatchedInvocation:businessID:")
+    public native FBAEMInvocation getMatchedInvocation(NSArray<FBAEMInvocation> invocations, String businessID);
     @Method(selector = "getInSegmentValue:matchingRule:")
     public native NSNumber getInSegmentValue(NSDictionary<NSString, ?> parameters, FBAEMAdvertiserRuleMatching matchingRule);
+    @Method(selector = "getContent:")
+    public native String getContent(NSDictionary<NSString, ?> parameters);
     @Method(selector = "getContentID:")
     public native String getContentID(NSDictionary<NSString, ?> parameters);
+    @Method(selector = "getBusinessIDsInOrder:")
+    public native NSArray<NSString> getBusinessIDsInOrder(NSArray<FBAEMInvocation> invocations);
     @Method(selector = "sharedUtility")
     public static native FBAEMUtility sharedUtility();
     /*</methods>*/

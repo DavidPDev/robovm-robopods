@@ -42,7 +42,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKLoginManager/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKLoginProviding/*</implements>*/ {
+    /*<implements>*/implements FBSDKURLOpening/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKLoginManagerPtr extends Ptr<FBSDKLoginManager, FBSDKLoginManagerPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKLoginManager.class); }/*</bind>*/
@@ -51,10 +51,10 @@ import org.robovm.pods.facebook.corebasics.*;
     public FBSDKLoginManager() {}
     protected FBSDKLoginManager(Handle h, long handle) { super(h, handle); }
     protected FBSDKLoginManager(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithDefaultAudience:")
+    public FBSDKLoginManager(FBSDKDefaultAudience defaultAudience) { super((SkipInit) null); initObject(init(defaultAudience)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "requestedPermissions")
-    public native NSSet<NSObject> getRequestedPermissions();
     @Property(selector = "defaultAudience")
     public native FBSDKDefaultAudience getDefaultAudience();
     @Property(selector = "setDefaultAudience:")
@@ -62,13 +62,25 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "logInWithPermissions:fromViewController:handler:")
-    public native void logIn(NSArray<NSString> permissions, UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
+    @Method(selector = "initWithDefaultAudience:")
+    protected native @Pointer long init(FBSDKDefaultAudience defaultAudience);
     @Method(selector = "logInFromViewController:configuration:completion:")
     public native void logIn(UIViewController viewController, FBSDKLoginConfiguration configuration, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> completion);
+    @Method(selector = "logInWithPermissions:fromViewController:handler:")
+    public native void logIn(NSArray<NSString> permissions, UIViewController viewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "reauthorizeDataAccess:handler:")
-    public native void reauthorizeDataAccess(UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
+    public native void reauthorizeDataAccess(UIViewController viewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "logOut")
     public native void logOut();
+    @Method(selector = "application:openURL:sourceApplication:annotation:")
+    public native boolean openURL(UIApplication application, NSURL url, String sourceApplication, NSObject annotation);
+    @Method(selector = "canOpenURL:forApplication:sourceApplication:annotation:")
+    public native boolean canOpenURL(NSURL url, UIApplication application, String sourceApplication, NSObject annotation);
+    @Method(selector = "applicationDidBecomeActive:")
+    public native void applicationDidBecomeActive(UIApplication application);
+    @Method(selector = "isAuthenticationURL:")
+    public native boolean isAuthenticationURL(NSURL url);
+    @Method(selector = "shouldStopPropagationOfURL:")
+    public native boolean shouldStopPropagationOfURL(NSURL url);
     /*</methods>*/
 }

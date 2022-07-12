@@ -42,7 +42,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKLoginCompleterFactory/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKLoginCompleterFactoryProtocol/*</implements>*/ {
+    /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKLoginCompleterFactoryPtr extends Ptr<FBSDKLoginCompleterFactory, FBSDKLoginCompleterFactoryPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKLoginCompleterFactory.class); }/*</bind>*/
@@ -57,7 +57,7 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "createLoginCompleterWithURLParameters:appID:authenticationTokenCreator:graphRequestFactory:internalUtility:")
-    public native FBSDKLoginCompleting createLoginCompleter(NSDictionary<NSString, ?> parameters, String appID, FBSDKAuthenticationTokenCreating authenticationTokenCreator, FBSDKGraphRequestFactoryProtocol graphRequestFactory, FBSDKURLHosting internalUtility);
+    @Method(selector = "createLoginCompleterWithUrlParameters:appID:")
+    public native FBSDKLoginCompleting createLoginCompleter(NSDictionary<NSString, ?> parameters, String appID);
     /*</methods>*/
 }

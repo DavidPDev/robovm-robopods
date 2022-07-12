@@ -55,6 +55,8 @@ classes:
                 name: isOutOfWindow
             '-getHMACWithDelay:':
                 name: getHMAC
+            '-attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:isRuleMatchInServer:':
+                name: attributeEvent
     FBAEMNetworker: {}
     FBAEMRequestBody:
         methods:
@@ -72,6 +74,8 @@ classes:
         methods:
             '-getInSegmentValue:matchingRule:':
                 name: getInSegmentValue
+            '-getMatchedInvocation:businessID:':
+                name: getMatchedInvocation
     FBAEMAdvertiserMultiEntryRule:
         methods:
             '-initWithOperator:rules:':

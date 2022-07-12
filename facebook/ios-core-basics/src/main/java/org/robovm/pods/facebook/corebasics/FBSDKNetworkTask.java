@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.login;
+package org.robovm.pods.facebook.corebasics;
 
 /*<imports>*/
 import java.io.*;
@@ -31,16 +31,15 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
-import org.robovm.pods.facebook.core.*;
-import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKLoginProviding/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKNetworkTask/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -49,18 +48,14 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</bind>*/
     /*<constants>*//*</constants>*/
     /*<properties>*/
-    @Property(selector = "defaultAudience")
-    FBSDKDefaultAudience getDefaultAudience();
-    @Property(selector = "setDefaultAudience:")
-    void setDefaultAudience(FBSDKDefaultAudience v);
+    @Property(selector = "fb_state")
+    NSURLSessionTaskState getFb_state();
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "logInFromViewController:configuration:completion:")
-    void logIn(UIViewController viewController, FBSDKLoginConfiguration configuration, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> completion);
-    @Method(selector = "logInWithPermissions:fromViewController:handler:")
-    void logIn(NSArray<NSString> permissions, UIViewController viewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
-    @Method(selector = "logOut")
-    void logOut();
+    @Method(selector = "fb_resume")
+    void fb_resume();
+    @Method(selector = "fb_cancel")
+    void fb_cancel();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

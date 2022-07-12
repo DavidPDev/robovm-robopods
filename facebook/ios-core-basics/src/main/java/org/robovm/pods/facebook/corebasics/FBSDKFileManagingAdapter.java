@@ -53,15 +53,13 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("URLForDirectory:inDomain:appropriateForURL:create:error:")
-    public NSURL getURL(NSSearchPathDirectory directory, NSSearchPathDomainMask domain, NSURL url, boolean shouldCreate, NSError.NSErrorPtr error) { return null; }
-    @NotImplemented("createDirectoryAtPath:withIntermediateDirectories:attributes:error:")
-    public boolean createDirectory(String path, boolean createIntermediates, NSDictionary<NSString, ?> attributes, NSError.NSErrorPtr error) { return false; }
-    @NotImplemented("fileExistsAtPath:")
-    public boolean fileExistsAtPath(String path) { return false; }
-    @NotImplemented("removeItemAtPath:error:")
-    public boolean removeItem(String path, NSError.NSErrorPtr error) { return false; }
-    @NotImplemented("contentsOfDirectoryAtPath:error:")
-    public NSArray<NSString> getContentsOfDirectory(String path, NSError.NSErrorPtr error) { return null; }
+    @NotImplemented("fb_createDirectoryAtPath:withIntermediateDirectories:attributes:error:")
+    public boolean fb_createDirectory(String path, boolean createIntermediates, NSDictionary<NSString, ?> attributes, NSError.NSErrorPtr error) { return false; }
+    @NotImplemented("fb_fileExistsAtPath:")
+    public boolean fb_fileExistsAtPath(String path) { return false; }
+    @NotImplemented("fb_removeItemAtPath:error:")
+    public boolean fb_removeItem(String path, NSError.NSErrorPtr error) { return false; }
+    @NotImplemented("fb_contentsOfDirectoryAtPath:error:")
+    public NSArray<NSString> fb_contentsOfDirectory(String path, NSError.NSErrorPtr error) { return null; }
     /*</methods>*/
 }

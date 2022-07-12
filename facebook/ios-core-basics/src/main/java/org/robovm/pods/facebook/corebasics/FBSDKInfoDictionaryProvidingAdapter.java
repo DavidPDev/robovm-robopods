@@ -49,14 +49,14 @@ import org.robovm.apple.coreanimation.*;
     /*<constants>*//*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @NotImplemented("infoDictionary")
-    public NSDictionary<NSString, ?> getInfoDictionary() { return null; }
-    @NotImplemented("bundleIdentifier")
-    public String getBundleIdentifier() { return null; }
+    @NotImplemented("fb_infoDictionary")
+    public NSDictionary<NSString, ?> getFb_infoDictionary() { return null; }
+    @NotImplemented("fb_bundleIdentifier")
+    public String getFb_bundleIdentifier() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("objectForInfoDictionaryKey:")
-    public NSObject objectForInfoDictionaryKey(String key) { return null; }
+    @NotImplemented("fb_objectForInfoDictionaryKey:")
+    public NSObject fb_objectForInfoDictionaryKey(String key) { return null; }
     /*</methods>*/
 }

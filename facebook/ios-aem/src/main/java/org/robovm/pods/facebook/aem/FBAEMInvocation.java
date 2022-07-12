@@ -84,8 +84,8 @@ import org.robovm.apple.foundation.*;
     /*<methods>*/
     @Method(selector = "initWithAppLinkData:")
     protected native @Pointer long init(NSDictionary<?, ?> appLinkData);
-    @Method(selector = "attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:")
-    public native boolean attributeEvent(String event, String potentialValueCurrency, NSNumber potentialValue, NSDictionary<NSString, ?> parameters, NSDictionary<?, ?> configurations, boolean shouldUpdateCache);
+    @Method(selector = "attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:isRuleMatchInServer:")
+    public native boolean attributeEvent(String event, String potentialValueCurrency, NSNumber potentialValue, NSDictionary<NSString, ?> parameters, NSDictionary<?, ?> configurations, boolean shouldUpdateCache, boolean isRuleMatchInServer);
     @Method(selector = "updateConversionValueWithConfigurations:event:shouldBoostPriority:")
     public native boolean updateConversionValue(NSDictionary<?, ?> configurations, String event, boolean shouldBoostPriority);
     @Method(selector = "isOptimizedEvent:configurations:")

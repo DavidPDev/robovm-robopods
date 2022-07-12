@@ -51,20 +51,20 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "setInteger:forKey:")
-    void setInteger(@MachineSizedSInt long value, String defaultName);
-    @Method(selector = "setObject:forKey:")
-    void setObject(NSObject value, String defaultName);
-    @Method(selector = "dataForKey:")
-    NSData dataForKey(String defaultName);
-    @Method(selector = "integerForKey:")
-    @MachineSizedSInt long integerForKey(String defaultName);
-    @Method(selector = "stringForKey:")
-    String stringForKey(String defaultName);
-    @Method(selector = "objectForKey:")
-    NSObject objectForKey(String defaultName);
-    @Method(selector = "removeObjectForKey:")
-    void removeObjectForKey(String defaultName);
+    @Method(selector = "fb_setInteger:forKey:")
+    void fb_setInteger(@MachineSizedSInt long integer, String key);
+    @Method(selector = "fb_setObject:forKey:")
+    void fb_setObject(NSObject object, String key);
+    @Method(selector = "fb_dataForKey:")
+    NSData fb_dataForKey(String key);
+    @Method(selector = "fb_integerForKey:")
+    @MachineSizedSInt long fb_integerForKey(String key);
+    @Method(selector = "fb_stringForKey:")
+    String fb_stringForKey(String key);
+    @Method(selector = "fb_objectForKey:")
+    NSObject fb_objectForKey(String key);
+    @Method(selector = "fb_removeObjectForKey:")
+    void fb_removeObjectForKey(String key);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

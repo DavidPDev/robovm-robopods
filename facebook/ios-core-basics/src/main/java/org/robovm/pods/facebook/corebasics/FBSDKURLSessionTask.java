@@ -51,13 +51,13 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKURLSessionTask(Handle h, long handle) { super(h, handle); }
     protected FBSDKURLSessionTask(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithRequest:fromSession:completionHandler:")
-    public FBSDKURLSessionTask(NSURLRequest request, FBSDKSessionProviding session, @Block VoidBlock3<NSData, NSURLResponse, NSError> handler) { super((SkipInit) null); initObject(init(request, session, handler)); }
+    public FBSDKURLSessionTask(NSURLRequest request, FBSDKURLSessionProviding session, @Block VoidBlock3<NSData, NSURLResponse, NSError> handler) { super((SkipInit) null); initObject(init(request, session, handler)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "task")
-    public native FBSDKSessionDataTask getTask();
+    public native FBSDKNetworkTask getTask();
     @Property(selector = "setTask:")
-    public native void setTask(FBSDKSessionDataTask v);
+    public native void setTask(FBSDKNetworkTask v);
     @Property(selector = "state")
     public native NSURLSessionTaskState getState();
     @Property(selector = "requestStartDate")
@@ -78,7 +78,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithRequest:fromSession:completionHandler:")
-    protected native @Pointer long init(NSURLRequest request, FBSDKSessionProviding session, @Block VoidBlock3<NSData, NSURLResponse, NSError> handler);
+    protected native @Pointer long init(NSURLRequest request, FBSDKURLSessionProviding session, @Block VoidBlock3<NSData, NSURLResponse, NSError> handler);
     @Method(selector = "start")
     public native void start();
     @Method(selector = "cancel")

@@ -53,19 +53,19 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("setInteger:forKey:")
-    public void setInteger(@MachineSizedSInt long value, String defaultName) {}
-    @NotImplemented("setObject:forKey:")
-    public void setObject(NSObject value, String defaultName) {}
-    @NotImplemented("dataForKey:")
-    public NSData dataForKey(String defaultName) { return null; }
-    @NotImplemented("integerForKey:")
-    public @MachineSizedSInt long integerForKey(String defaultName) { return 0; }
-    @NotImplemented("stringForKey:")
-    public String stringForKey(String defaultName) { return null; }
-    @NotImplemented("objectForKey:")
-    public NSObject objectForKey(String defaultName) { return null; }
-    @NotImplemented("removeObjectForKey:")
-    public void removeObjectForKey(String defaultName) {}
+    @NotImplemented("fb_setInteger:forKey:")
+    public void fb_setInteger(@MachineSizedSInt long integer, String key) {}
+    @NotImplemented("fb_setObject:forKey:")
+    public void fb_setObject(NSObject object, String key) {}
+    @NotImplemented("fb_dataForKey:")
+    public NSData fb_dataForKey(String key) { return null; }
+    @NotImplemented("fb_integerForKey:")
+    public @MachineSizedSInt long fb_integerForKey(String key) { return 0; }
+    @NotImplemented("fb_stringForKey:")
+    public String fb_stringForKey(String key) { return null; }
+    @NotImplemented("fb_objectForKey:")
+    public NSObject fb_objectForKey(String key) { return null; }
+    @NotImplemented("fb_removeObjectForKey:")
+    public void fb_removeObjectForKey(String key) {}
     /*</methods>*/
 }

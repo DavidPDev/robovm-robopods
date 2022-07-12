@@ -70,7 +70,5 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<methods>*/
     @Method(selector = "initWithToken:authenticationToken:isCancelled:grantedPermissions:declinedPermissions:")
     protected native @Pointer long init(FBSDKAccessToken token, FBSDKAuthenticationToken authenticationToken, boolean isCancelled, NSSet<NSString> grantedPermissions, NSSet<NSString> declinedPermissions);
-    @Method(selector = "addLoggingExtra:forKey:")
-    public native void addLogging(NSObject object, String key);
     /*</methods>*/
 }

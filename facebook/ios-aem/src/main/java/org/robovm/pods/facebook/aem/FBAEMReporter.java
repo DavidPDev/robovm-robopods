@@ -61,6 +61,8 @@ import org.robovm.apple.foundation.*;
     public static native void setConversionFilteringEnabled(boolean enabled);
     @Method(selector = "setCatalogMatchingEnabled:")
     public static native void setCatalogMatchingEnabled(boolean enabled);
+    @Method(selector = "setAdvertiserRuleMatchInServerEnabled:")
+    public static native void setAdvertiserRuleMatchInServerEnabled(boolean enabled);
     @Method(selector = "handleURL:")
     public static native void handleURL(NSURL url);
     @Method(selector = "recordAndUpdateEvent:currency:value:parameters:")

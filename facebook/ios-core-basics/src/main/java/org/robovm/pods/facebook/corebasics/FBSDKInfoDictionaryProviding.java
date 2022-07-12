@@ -48,14 +48,14 @@ import org.robovm.apple.coreanimation.*;
     /*</bind>*/
     /*<constants>*//*</constants>*/
     /*<properties>*/
-    @Property(selector = "infoDictionary")
-    NSDictionary<NSString, ?> getInfoDictionary();
-    @Property(selector = "bundleIdentifier")
-    String getBundleIdentifier();
+    @Property(selector = "fb_infoDictionary")
+    NSDictionary<NSString, ?> getFb_infoDictionary();
+    @Property(selector = "fb_bundleIdentifier")
+    String getFb_bundleIdentifier();
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "objectForInfoDictionaryKey:")
-    NSObject objectForInfoDictionaryKey(String key);
+    @Method(selector = "fb_objectForInfoDictionaryKey:")
+    NSObject fb_objectForInfoDictionaryKey(String key);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

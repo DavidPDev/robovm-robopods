@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.core;
+package org.robovm.pods.facebook.corebasics;
 
 /*<imports>*/
 import java.io.*;
@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKAuthenticationTokenSetting/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKURLSessionProviding/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -51,7 +51,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    
+    @Method(selector = "fb_dataTaskWithRequest:completionHandler:")
+    FBSDKNetworkTask fb_dataTask(NSURLRequest request, @Block VoidBlock3<NSData, NSURLResponse, NSError> completionHandler);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

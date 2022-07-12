@@ -42,7 +42,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKProfileFactory/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKProfileCreating/*</implements>*/ {
+    /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKProfileFactoryPtr extends Ptr<FBSDKProfileFactory, FBSDKProfileFactoryPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKProfileFactory.class); }/*</bind>*/

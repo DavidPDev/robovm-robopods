@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.login;
+package org.robovm.pods.facebook.corebasics;
 
 /*<imports>*/
 import java.io.*;
@@ -31,17 +31,16 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
-import org.robovm.pods.facebook.core.*;
-import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKLoginProvidingAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKURLSessionProvidingAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKLoginProviding/*</implements>*/ {
+    /*<implements>*/implements FBSDKURLSessionProviding/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -50,18 +49,11 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<constants>*//*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @NotImplemented("defaultAudience")
-    public FBSDKDefaultAudience getDefaultAudience() { return null; }
-    @NotImplemented("setDefaultAudience:")
-    public void setDefaultAudience(FBSDKDefaultAudience v) {}
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("logInFromViewController:configuration:completion:")
-    public void logIn(UIViewController viewController, FBSDKLoginConfiguration configuration, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> completion) {}
-    @NotImplemented("logInWithPermissions:fromViewController:handler:")
-    public void logIn(NSArray<NSString> permissions, UIViewController viewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler) {}
-    @NotImplemented("logOut")
-    public void logOut() {}
+    @NotImplemented("fb_dataTaskWithRequest:completionHandler:")
+    public FBSDKNetworkTask fb_dataTask(NSURLRequest request, @Block VoidBlock3<NSData, NSURLResponse, NSError> completionHandler) { return null; }
     /*</methods>*/
 }

@@ -51,16 +51,14 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "URLForDirectory:inDomain:appropriateForURL:create:error:")
-    NSURL getURL(NSSearchPathDirectory directory, NSSearchPathDomainMask domain, NSURL url, boolean shouldCreate, NSError.NSErrorPtr error);
-    @Method(selector = "createDirectoryAtPath:withIntermediateDirectories:attributes:error:")
-    boolean createDirectory(String path, boolean createIntermediates, NSDictionary<NSString, ?> attributes, NSError.NSErrorPtr error);
-    @Method(selector = "fileExistsAtPath:")
-    boolean fileExistsAtPath(String path);
-    @Method(selector = "removeItemAtPath:error:")
-    boolean removeItem(String path, NSError.NSErrorPtr error);
-    @Method(selector = "contentsOfDirectoryAtPath:error:")
-    NSArray<NSString> getContentsOfDirectory(String path, NSError.NSErrorPtr error);
+    @Method(selector = "fb_createDirectoryAtPath:withIntermediateDirectories:attributes:error:")
+    boolean fb_createDirectory(String path, boolean createIntermediates, NSDictionary<NSString, ?> attributes, NSError.NSErrorPtr error);
+    @Method(selector = "fb_fileExistsAtPath:")
+    boolean fb_fileExistsAtPath(String path);
+    @Method(selector = "fb_removeItemAtPath:error:")
+    boolean fb_removeItem(String path, NSError.NSErrorPtr error);
+    @Method(selector = "fb_contentsOfDirectoryAtPath:error:")
+    NSArray<NSString> fb_contentsOfDirectory(String path, NSError.NSErrorPtr error);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

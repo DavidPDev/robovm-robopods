@@ -56,7 +56,7 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<methods>*/
     @NotImplemented("completeLoginWithHandler:")
     public void completeLogin(@Block VoidBlock1<FBSDKLoginCompletionParameters> handler) {}
-    @NotImplemented("completeLoginWithHandler:nonce:codeVerifier:")
-    public void completeLogin(@Block VoidBlock1<FBSDKLoginCompletionParameters> handler, String nonce, String codeVerifier) {}
+    @NotImplemented("completeLoginWithNonce:codeVerifier:handler:")
+    public void completeLogin(String nonce, String codeVerifier, @Block VoidBlock1<FBSDKLoginCompletionParameters> handler) {}
     /*</methods>*/
 }

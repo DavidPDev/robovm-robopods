@@ -39,6 +39,11 @@ classes:
         methods:
             '-initWithPermissions:enableSmartLogin:':
                 name: init
+            '-netService:didNotPublish:':
+                name: didNotPublish
+                parameters:
+                    1:
+                        type: NSNetServiceErrorUserInfo
     FBSDKDeviceLoginManagerResult:
         methods:
             '-initWithToken:isCancelled:':
@@ -53,6 +58,12 @@ classes:
                 name: logIn
             '-reauthorizeDataAccess:handler:':
                 name: reauthorizeDataAccess
+            '-initWithDefaultAudience:':
+                name: init
+            '-logInFromViewController:configuration:completion:':
+                name: logIn
+            '-logInWithPermissions:fromViewController:handler:':
+                name: logIn
     FBSDKLoginManagerLoginResult:
         methods:
             '-initWithToken:isCancelled:grantedPermissions:declinedPermissions:':
@@ -120,13 +131,18 @@ classes:
         methods:
             '-scheduleBlock:interval:':
                 name: schedule
+            '-scheduleWithInterval:block:':
+                name: schedule
     FBSDKDeviceRequestsHelper:
         methods:
             '+startAdvertisementServiceWithLoginCode:delegate:':
                 name: startAdvertisementService
             '+isDelegate:forAdvertisementService:':
                 name: isDelegate
-    FBSDKLoginCompleterFactory: {}
+    FBSDKLoginCompleterFactory:
+        methods:
+            '-createLoginCompleterWithUrlParameters:appID:':
+                name: createLoginCompleter
     FBSDKLoginCompletionParameters: {}
     FBSDKLoginManagerLogger:
         methods:
@@ -148,6 +164,10 @@ classes:
         methods:
             '-createProfileWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:':
                 name: createProfile
+    _LoginURLCompleter:
+        methods:
+            '-completeLoginWithNonce:codeVerifier:handler:':
+                name: completeLogin
 protocols:
     FBSDKDeviceLoginManagerDelegate:
         methods:
@@ -197,6 +217,8 @@ protocols:
             '-completeLoginWithHandler:':
                 name: completeLogin
             '-completeLoginWithHandler:nonce:codeVerifier:':
+                name: completeLogin
+            '-completeLoginWithNonce:codeVerifier:handler:':
                 name: completeLogin
     FBSDKProfileCreating:
         methods:

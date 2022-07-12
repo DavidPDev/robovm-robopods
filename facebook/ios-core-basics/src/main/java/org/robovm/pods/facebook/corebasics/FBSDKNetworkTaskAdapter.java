@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.login;
+package org.robovm.pods.facebook.corebasics;
 
 /*<imports>*/
 import java.io.*;
@@ -31,17 +31,16 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
-import org.robovm.pods.facebook.core.*;
-import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKDevicePollingAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKNetworkTaskAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKDevicePolling/*</implements>*/ {
+    /*<implements>*/implements FBSDKNetworkTask/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -50,11 +49,14 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<constants>*//*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    
+    @NotImplemented("fb_state")
+    public NSURLSessionTaskState getFb_state() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("scheduleBlock:interval:")
-    public void schedule(@Block Runnable block, @MachineSizedUInt long interval) {}
+    @NotImplemented("fb_resume")
+    public void fb_resume() {}
+    @NotImplemented("fb_cancel")
+    public void fb_cancel() {}
     /*</methods>*/
 }

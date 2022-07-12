@@ -74,12 +74,12 @@ import org.robovm.pods.facebook.corebasics.*;
     public native void start();
     @Method(selector = "cancel")
     public native void cancel();
+    @Method(selector = "netService:didNotPublish:")
+    public native void didNotPublish(NSNetService service, NSNetServiceErrorUserInfo errorValues);
     @Method(selector = "netServiceWillPublish:")
     public native void willPublish(NSNetService sender);
     @Method(selector = "netServiceDidPublish:")
     public native void didPublish(NSNetService sender);
-    @Method(selector = "netService:didNotPublish:")
-    public native void didNotPublish(NSNetService sender, NSNetServiceErrorUserInfo errorDict);
     @Method(selector = "netServiceWillResolve:")
     public native void willResolve(NSNetService sender);
     @Method(selector = "netServiceDidResolveAddress:")

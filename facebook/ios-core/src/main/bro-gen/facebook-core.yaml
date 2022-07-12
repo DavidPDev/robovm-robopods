@@ -706,6 +706,25 @@ protocols:
         methods:
             '-configureWithFactory:settings:':
                 name: configure
+    FBSDKNetworkTask: { }
+    FBSDKURLSessionProviding:
+        methods:
+            '-fb_dataTaskWithRequest:completionHandler:':
+                name: fb_dataTask
+    FBSDKDataPersisting:
+        methods:
+            '-fb_setInteger:forKey:':
+                name: fb_setInteger
+            '-fb_setObject:forKey:':
+                name: fb_setObject
+    FBSDKFileManaging:
+        methods:
+            '-fb_createDirectoryAtPath:withIntermediateDirectories:attributes:error:':
+                name: fb_createDirectory
+            '-fb_removeItemAtPath:error:':
+                name: fb_removeItem
+            '-fb_contentsOfDirectoryAtPath:error:':
+                name: fb_contentsOfDirectory
 functions:
     fb_randomString:
         exclude: true

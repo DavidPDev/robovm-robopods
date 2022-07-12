@@ -84,6 +84,10 @@ protocols:
                 name: setInteger
             '-setObject:forKey:':
                 name: setObject
+            '-fb_setInteger:forKey:':
+                name: fb_setInteger
+            '-fb_setObject:forKey:':
+                name: fb_setObject
     FBSDKFileDataExtracting:
         methods:
             '+dataWithContentsOfFile:options:error:':
@@ -103,12 +107,23 @@ protocols:
             '-contentsOfDirectoryAtPath:error:':
                 name: getContentsOfDirectory
                 throws: NSErrorException
+            '-fb_createDirectoryAtPath:withIntermediateDirectories:attributes:error:':
+                name: fb_createDirectory
+            '-fb_removeItemAtPath:error:':
+                name: fb_removeItem
+            '-fb_contentsOfDirectoryAtPath:error:':
+                name: fb_contentsOfDirectory
     FBSDKInfoDictionaryProviding: {}
     FBSDKSessionDataTask: {}
     FBSDKSessionProviding:
         methods:
             '-dataTaskWithRequest:completionHandler:':
                 name: getDataTask
+    FBSDKNetworkTask: { }
+    FBSDKURLSessionProviding:
+        methods:
+            '-fb_dataTaskWithRequest:completionHandler:':
+                name: fb_dataTask
 
 functions:
     fb_dispatch_on_main_thread:
@@ -125,6 +140,11 @@ functions:
         name: 'Function_#{g[0]}'
 
 values:
+    FBLinkable_(.*):
+        exclude: true
+    FBLink_(.*):
+        exclude: true
+
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):
         class: __FixMe

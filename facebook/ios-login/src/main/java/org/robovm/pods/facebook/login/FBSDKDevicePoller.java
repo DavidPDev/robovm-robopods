@@ -42,7 +42,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKDevicePoller/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKDevicePolling/*</implements>*/ {
+    /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKDevicePollerPtr extends Ptr<FBSDKDevicePoller, FBSDKDevicePollerPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKDevicePoller.class); }/*</bind>*/
@@ -57,7 +57,7 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "scheduleBlock:interval:")
-    public native void schedule(@Block Runnable block, @MachineSizedUInt long interval);
+    @Method(selector = "scheduleWithInterval:block:")
+    public native void schedule(@MachineSizedUInt long interval, @Block Runnable block);
     /*</methods>*/
 }
