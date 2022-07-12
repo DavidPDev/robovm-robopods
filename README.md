@@ -54,7 +54,7 @@ v1.24.0 - in development
 | [InMobi](inmobi/)               | 10.0.7 |
 | [IronSource](ironsource/)       | 7.2.3  |
 | [Kochava](kochava/)             | 5.1.1  |
-| [Lottie](lottie/)               | 3.3.0  |
+| [Lottie](lottie/)               | 3.4.0  |
 | [OneSignal](onesignal/)         | 3.11.2 |
 | [Pollfish](pollfish/)           | 6.2.5  |
 | [SAMKeychain](samkeychain/)     | 1.5.3  |

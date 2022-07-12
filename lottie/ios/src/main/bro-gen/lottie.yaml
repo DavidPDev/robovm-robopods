@@ -3,7 +3,9 @@ include: [foundation, uikit, coregraphics, coreanimation]
 framework: Lottie
 clang_args: ['-x', 'objective-c']
 headers:
-    - Lottie.h
+    - "#include <TargetConditionals.h>"
+    - "#import <UIKit/UIKit.h>"
+    - "#import <Lottie/Lottie-Swift.h>"
 
 typedefs: {}
 
@@ -128,6 +130,21 @@ classes:
         methods:
             '-initWithCoder:':
                 name: init
+    AnimationViewBase: {}
+    BaseAnimationLayer: {}
+    BaseCompositionLayer: {}
+    CoreAnimationLayer: {}
+    CoreTextRenderLayer: {}
+    GradientRenderLayer: {}
+    GroupLayer: {}
+    ImageLayer: {}
+    MainThreadAnimationLayer: {}
+    MaskCompositionLayer: {}
+    PreCompLayer: {}
+    ShapeItemLayer: {}
+    ShapeLayer: {}
+    SolidLayer: {}
+    TransformLayer: {}
 protocols: {}
 
 

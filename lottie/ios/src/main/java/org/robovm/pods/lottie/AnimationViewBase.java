@@ -36,22 +36,22 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie10LottieView")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/LottieView/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie17AnimationViewBase")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/AnimationViewBase/*</name>*/ 
     extends /*<extends>*/UIView/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class LottieViewPtr extends Ptr<LottieView, LottieViewPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(LottieView.class); }/*</bind>*/
+    /*<ptr>*/public static class AnimationViewBasePtr extends Ptr<AnimationViewBase, AnimationViewBasePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(AnimationViewBase.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public LottieView() {}
-    protected LottieView(Handle h, long handle) { super(h, handle); }
-    protected LottieView(SkipInit skipInit) { super(skipInit); }
+    public AnimationViewBase() {}
+    protected AnimationViewBase(Handle h, long handle) { super(h, handle); }
+    protected AnimationViewBase(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public LottieView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
+    public AnimationViewBase(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public LottieView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
+    public AnimationViewBase(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "contentMode")
@@ -68,6 +68,10 @@ import org.robovm.apple.coreanimation.*;
     public native void didMoveToWindow();
     @Method(selector = "layoutSubviews")
     public native void layoutSubviews();
+    @Method(selector = "animationWillMoveToBackground")
+    public native void animationWillMoveToBackground();
+    @Method(selector = "animationWillEnterForeground")
+    public native void animationWillEnterForeground();
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")

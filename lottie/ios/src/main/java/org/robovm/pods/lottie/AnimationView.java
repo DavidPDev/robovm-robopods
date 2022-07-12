@@ -38,7 +38,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie13AnimationView")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/AnimationView/*</name>*/ 
-    extends /*<extends>*/LottieView/*</extends>*/ 
+    extends /*<extends>*/AnimationViewBase/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class AnimationViewPtr extends Ptr<AnimationView, AnimationViewPtr> {}/*</ptr>*/
@@ -49,13 +49,17 @@ import org.robovm.apple.coreanimation.*;
     protected AnimationView(Handle h, long handle) { super(h, handle); }
     protected AnimationView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public AnimationView(@ByVal CGRect _) { super((SkipInit) null); initObject(init(_)); }
+    public AnimationView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public AnimationView(NSCoder aDecoder) { super((SkipInit) null); initObject(init(aDecoder)); }
+    public AnimationView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "intrinsicContentSize")
     public native @ByVal CGSize getIntrinsicContentSize();
+    @Property(selector = "animationName")
+    public native String getAnimationName();
+    @Property(selector = "setAnimationName:")
+    public native void setAnimationName(String v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
@@ -63,9 +67,13 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithFrame:")
-    protected native @Pointer long init(@ByVal CGRect _);
+    protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
-    protected native @Pointer long init(NSCoder aDecoder);
+    protected native @Pointer long init(NSCoder coder);
+    @Method(selector = "animationWillMoveToBackground")
+    public native void animationWillMoveToBackground();
+    @Method(selector = "animationWillEnterForeground")
+    public native void animationWillEnterForeground();
     /**
      * @since Available in iOS 9.0 and later.
      */

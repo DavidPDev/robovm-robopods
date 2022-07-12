@@ -175,18 +175,6 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                     ?.let { it.substringAfterLast(" \"").substringBeforeLast("\"") }
                     ?: error("Failed to find out Lottie version!")
             },
-            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
-                copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
-                // after copied include Lottie/Lottie-Swift.h to Lottie.h
-                File(destinationHeadersDir, "Lottie.h").appendText(
-                    """
-                    #include <TargetConditionals.h>
-                  	#import <UIKit/UIKit.h>
-                    // In this header, you should import all the public headers of your framework using statements like #import <Lottie/Lottie-Swift.h>
-                    #import <Lottie/Lottie-Swift.h>
-                """.trimIndent()
-                )
-            },
             instruction = """
                 0. check latest version number at https://github.com/airbnb/lottie-ios/releases
                 1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Lottie:

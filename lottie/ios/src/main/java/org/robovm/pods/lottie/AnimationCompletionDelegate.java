@@ -36,29 +36,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie19CompatibleAnimation")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CompatibleAnimation/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie27AnimationCompletionDelegate")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/AnimationCompletionDelegate/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements CAAnimationDelegate/*</implements>*/ {
 
-    /*<ptr>*/public static class CompatibleAnimationPtr extends Ptr<CompatibleAnimation, CompatibleAnimationPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CompatibleAnimation.class); }/*</bind>*/
+    /*<ptr>*/public static class AnimationCompletionDelegatePtr extends Ptr<AnimationCompletionDelegate, AnimationCompletionDelegatePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(AnimationCompletionDelegate.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected CompatibleAnimation() {}
-    protected CompatibleAnimation(Handle h, long handle) { super(h, handle); }
-    protected CompatibleAnimation(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithName:bundle:")
-    public CompatibleAnimation(String name, NSBundle bundle) { super((SkipInit) null); initObject(init(name, bundle)); }
+    protected AnimationCompletionDelegate() {}
+    protected AnimationCompletionDelegate(Handle h, long handle) { super(h, handle); }
+    protected AnimationCompletionDelegate(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithName:bundle:")
-    protected native @Pointer long init(String name, NSBundle bundle);
-    @Method(selector = "named:")
-    public static native CompatibleAnimation named(String name);
+    @Method(selector = "animationDidStop:finished:")
+    public native void didStop(CAAnimation anim, boolean flag);
+    @Method(selector = "animationDidStart:")
+    public native void didStart(CAAnimation anim);
     /*</methods>*/
 }
