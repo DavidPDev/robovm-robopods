@@ -25,7 +25,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-google-mobile-ads-mediation-testsuite:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-google-mobile-ads-mediation-testsuite:$altpodsVersion"
 }
 ```
 

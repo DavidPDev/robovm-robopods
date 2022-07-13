@@ -29,6 +29,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-firebase-dynamic-links-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-firebase-dynamic-links-ios:$altpodsVersion"
 }
 ```

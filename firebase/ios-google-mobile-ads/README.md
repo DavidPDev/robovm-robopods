@@ -27,7 +27,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-firebase-google-mobile-ads-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-firebase-google-mobile-ads-ios:$altpodsVersion"
 }
 ```
 

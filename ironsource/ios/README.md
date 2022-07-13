@@ -26,7 +26,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-ironsource-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-ironsource-ios:$altpodsVersion"
 }
 ```
 

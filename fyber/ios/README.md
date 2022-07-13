@@ -21,6 +21,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-fyber-core-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-fyber-core-ios:$altpodsVersion"
 }
 ```

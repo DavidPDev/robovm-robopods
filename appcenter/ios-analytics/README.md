@@ -28,6 +28,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-appcenter-analytics-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-appcenter-analytics-ios:$altpodsVersion"
 }
 ```

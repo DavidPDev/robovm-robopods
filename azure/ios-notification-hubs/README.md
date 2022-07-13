@@ -25,6 +25,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-azure-notification-hubs-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-azure-notification-hubs-ios:$altpodsVersion"
 }
 ```

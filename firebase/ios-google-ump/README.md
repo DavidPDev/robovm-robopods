@@ -25,7 +25,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-firebase-google-ump-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-firebase-google-ump-ios:$altpodsVersion"
 }
 ```
 

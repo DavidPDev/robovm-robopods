@@ -29,7 +29,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-unityads-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-unityads-ios:$altpodsVersion"
 }
 ```
 

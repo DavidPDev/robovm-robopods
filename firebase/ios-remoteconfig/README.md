@@ -31,6 +31,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-firebase-remote-config-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-firebase-remote-config-ios:$altpodsVersion"
 }
 ```

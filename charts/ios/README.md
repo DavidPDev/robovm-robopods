@@ -34,7 +34,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-charts-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-charts-ios:$altpodsVersion"
 }
 ```
 

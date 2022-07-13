@@ -24,6 +24,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-flurry-config-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-flurry-config-ios:$altpodsVersion"
 }
 ```

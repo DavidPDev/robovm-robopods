@@ -44,6 +44,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-facebook-core-basics-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-facebook-core-basics-ios:$altpodsVersion"
 }
 ```

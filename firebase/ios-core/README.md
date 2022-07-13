@@ -30,6 +30,6 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   compile "io.github.dkimitsa.robovm:robopods-firebase-core-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-firebase-core-ios:$altpodsVersion"
 }
 ```
