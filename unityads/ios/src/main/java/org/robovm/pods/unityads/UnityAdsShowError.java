@@ -45,7 +45,8 @@ public enum /*<name>*/UnityAdsShowError/*</name>*/ implements ValuedEnum {
     InvalidArgument(3L),
     NoConnection(4L),
     AlreadyShowing(5L),
-    InternalError(6L);
+    InternalError(6L),
+    Timeout(7L);
     /*</values>*/
 
     /*<bind>*/
