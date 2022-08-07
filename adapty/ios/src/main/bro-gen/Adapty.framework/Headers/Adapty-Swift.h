@@ -284,6 +284,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL idfaCollectionDisabled;)
 + (void)activate:(NSString * _Nonnull)apiKey observerMode:(BOOL)observerMode;
 + (void)activate:(NSString * _Nonnull)apiKey customerUserId:(NSString * _Nullable)customerUserId;
 + (void)activate:(NSString * _Nonnull)apiKey observerMode:(BOOL)observerMode customerUserId:(NSString * _Nullable)customerUserId;
++ (void)activate:(NSString * _Nonnull)apiKey observerMode:(BOOL)observerMode customerUserId:(NSString * _Nullable)customerUserId completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
 + (void)identify:(NSString * _Nonnull)customerUserId completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
 + (void)updateProfileWithParams:(ProfileParameterBuilder * _Nonnull)params completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
 + (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
@@ -948,6 +949,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL idfaCollectionDisabled;)
 + (void)activate:(NSString * _Nonnull)apiKey observerMode:(BOOL)observerMode;
 + (void)activate:(NSString * _Nonnull)apiKey customerUserId:(NSString * _Nullable)customerUserId;
 + (void)activate:(NSString * _Nonnull)apiKey observerMode:(BOOL)observerMode customerUserId:(NSString * _Nullable)customerUserId;
++ (void)activate:(NSString * _Nonnull)apiKey observerMode:(BOOL)observerMode customerUserId:(NSString * _Nullable)customerUserId completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
 + (void)identify:(NSString * _Nonnull)customerUserId completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
 + (void)updateProfileWithParams:(ProfileParameterBuilder * _Nonnull)params completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;
 + (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(AdaptyError * _Nullable))completion;

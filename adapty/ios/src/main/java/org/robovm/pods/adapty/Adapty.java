@@ -77,6 +77,8 @@ import org.robovm.apple.webkit.*;
     public static native void activate(String apiKey, String customerUserId);
     @Method(selector = "activate:observerMode:customerUserId:")
     public static native void activate(String apiKey, boolean observerMode, String customerUserId);
+    @Method(selector = "activate:observerMode:customerUserId:completion:")
+    public static native void activate$observerMode$customerUserId$completion$(String apiKey, boolean observerMode, String customerUserId, @Block VoidBlock1<AdaptyError> completion);
     @Method(selector = "identify:completion:")
     public static native void identify(String customerUserId, @Block VoidBlock1<AdaptyError> completion);
     @Method(selector = "updateProfileWithParams:completion:")
