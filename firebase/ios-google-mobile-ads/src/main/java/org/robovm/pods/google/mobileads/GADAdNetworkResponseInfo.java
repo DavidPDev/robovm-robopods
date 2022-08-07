@@ -56,6 +56,8 @@ import org.robovm.apple.webkit.*;
     public native String getAdNetworkClassName();
     @Property(selector = "adUnitMapping")
     public native NSDictionary<NSString, ?> getAdUnitMapping();
+    @Property(selector = "adSourceInstanceID")
+    public native String getAdSourceInstanceID();
     @Property(selector = "error")
     public native NSError getError();
     @Property(selector = "latency")

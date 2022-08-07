@@ -56,6 +56,8 @@ import org.robovm.apple.webkit.*;
     public native String getResponseIdentifier();
     @Property(selector = "adNetworkClassName")
     public native String getAdNetworkClassName();
+    @Property(selector = "loadedAdNetworkResponseInfo")
+    public native GADAdNetworkResponseInfo getLoadedAdNetworkResponseInfo();
     @Property(selector = "adNetworkInfoArray")
     public native NSArray<GADAdNetworkResponseInfo> getAdNetworkInfoArray();
     @Property(selector = "dictionaryRepresentation")
