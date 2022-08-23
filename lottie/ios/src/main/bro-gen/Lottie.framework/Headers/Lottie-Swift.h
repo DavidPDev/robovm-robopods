@@ -253,6 +253,7 @@ SWIFT_CLASS("_TtC6Lottie14AnimatedButton")
 @interface AnimatedButton : AnimatedControl
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic) UIAccessibilityTraits accessibilityTraits;
 - (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
 - (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
 @end
@@ -266,6 +267,7 @@ SWIFT_CLASS("_TtC6Lottie14AnimatedSwitch")
 @interface AnimatedSwitch : AnimatedControl
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic) UIAccessibilityTraits accessibilityTraits;
 - (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
 @end
 
@@ -612,6 +614,18 @@ SWIFT_CLASS("_TtC6Lottie19PreCompositionLayer")
 @interface PreCompositionLayer : CompositionLayer
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A layer that renders a child layer at some offset using a <code>Repeater</code>
+SWIFT_CLASS("_TtC6Lottie13RepeaterLayer")
+@interface RepeaterLayer : BaseAnimationLayer
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
+/// Called by CoreAnimation to create a shadow copy of this layer
+/// More details: https://developer.apple.com/documentation/quartzcore/calayer/1410842-init
+- (nonnull instancetype)initWithLayer:(id _Nonnull)layer OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 

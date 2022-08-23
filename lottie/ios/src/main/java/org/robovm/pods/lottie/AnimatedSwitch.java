@@ -57,6 +57,10 @@ import org.robovm.apple.coreanimation.*;
     public AnimatedSwitch(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "accessibilityTraits")
+    public native UIAccessibilityTraits getAccessibilityTraits();
+    @Property(selector = "setAccessibilityTraits:")
+    public native void setAccessibilityTraits(UIAccessibilityTraits v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
