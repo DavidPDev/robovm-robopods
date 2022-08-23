@@ -21,6 +21,7 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 | [ios-messaging](ios-messaging/)                                                  | Firebase iOS Messaging                         | 9.4.0   |
 | [ios-remoteconfig](ios-remoteconfig/)                                            | Firebase iOS Remote Config                     | 9.4.0   |
 | [ios-storage](ios-storage/)                                                      | Firebase iOS Storage                           | 9.4.0   |
+| [ios-appcheck](ios-appcheck/)                                                    | Firebase iOS App Check                         | 9.4.0   |
 
 ## Versions
 
@@ -54,4 +55,5 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 
 ## Official website
 
+https://github.com/firebase/firebase-ios-sdk/releases
 https://firebase.google.com

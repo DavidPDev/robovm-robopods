@@ -1,0 +1,77 @@
+package: org.robovm.pods.firebase.appcheck
+include: [foundation]
+framework: FirebaseAppCheck
+clang_args: ['-x', 'objective-c']
+headers:
+    - FirebaseAppCheck.h
+
+private_typedefs:
+    "FIRApp *": org.robovm.pods.firebase.core.FIRApp
+
+typedefs: {}
+
+enums:
+    FIRAppCheckErrorCode: { nserror: true}
+classes:
+    FIRAppAttestProvider: #since 14.0
+        methods:
+            '-initWithApp:':
+                name: init
+    FIRAppCheck:
+        methods:
+            '-tokenForcingRefresh:completion:':
+                name: tokenForcingRefresh
+            '+appCheckWithApp:':
+                name: appCheck
+    FIRAppCheckDebugProvider:
+        methods:
+            '-initWithApp:':
+                name: init
+    FIRAppCheckDebugProviderFactory: {}
+    FIRAppCheckToken:
+        methods:
+            '-initWithToken:expirationDate:':
+                name: init
+    FIRDeviceCheckProvider: #since 11.0
+        methods:
+            '-initWithApp:':
+                name: init
+    FIRDeviceCheckProviderFactory: {} #since 11.0
+protocols:
+    FIRAppCheckProvider:
+        methods:
+            '-getTokenWithCompletion:':
+                name: getToken
+    FIRAppCheckProviderFactory:
+        methods:
+            '-createProviderWithApp:':
+                name: createProvider
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+    FIRAppCheckErrorDomain:
+        class: FIRAppCheckErrorCode
+        name: getClassDomain
+    FIRAppCheckAppCheckTokenDidChangeNotification:
+        class: FIRAppCheck
+        name: DidChangeNotification
+    kFIRAppCheck(AppName|Token)NotificationKey:
+        class: FIRAppCheck
+        static_class: NotificationKeys
+        name: '#{g[0]}'
+
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
