@@ -51,12 +51,18 @@ import org.robovm.apple.webkit.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "didRewardUserWithReward:")
-    void didRewardUser(GADAdReward reward);
+    @Method(selector = "didRewardUser")
+    void didRewardUser();
     @Method(selector = "didStartVideo")
     void didStartVideo();
     @Method(selector = "didEndVideo")
     void didEndVideo();
+    /**
+     * @deprecated Deprecated. Use -didRewardUser.
+     */
+    @Deprecated
+    @Method(selector = "didRewardUserWithReward:")
+    void didRewardUser(GADAdReward reward);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

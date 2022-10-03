@@ -81,6 +81,8 @@ import org.robovm.apple.foundation.*;
     public static native void setAnalyticsCollectionEnabled(boolean analyticsCollectionEnabled);
     @Method(selector = "setSessionTimeoutInterval:")
     public static native void setSessionTimeoutInterval(double sessionTimeoutInterval);
+    @Method(selector = "sessionIDWithCompletion:")
+    public static native void sessionID(@Block VoidBlock2<Long, NSError> completion);
     @Method(selector = "appInstanceID")
     public static native String appInstanceID();
     @Method(selector = "resetAnalyticsData")

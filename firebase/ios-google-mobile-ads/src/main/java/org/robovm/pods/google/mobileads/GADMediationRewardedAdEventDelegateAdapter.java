@@ -53,11 +53,17 @@ import org.robovm.apple.webkit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("didRewardUserWithReward:")
-    public void didRewardUser(GADAdReward reward) {}
+    @NotImplemented("didRewardUser")
+    public void didRewardUser() {}
     @NotImplemented("didStartVideo")
     public void didStartVideo() {}
     @NotImplemented("didEndVideo")
     public void didEndVideo() {}
+    /**
+     * @deprecated Deprecated. Use -didRewardUser.
+     */
+    @Deprecated
+    @NotImplemented("didRewardUserWithReward:")
+    public void didRewardUser(GADAdReward reward) {}
     /*</methods>*/
 }

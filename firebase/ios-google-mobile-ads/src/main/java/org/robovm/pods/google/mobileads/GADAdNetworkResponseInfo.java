@@ -56,6 +56,12 @@ import org.robovm.apple.webkit.*;
     public native String getAdNetworkClassName();
     @Property(selector = "adUnitMapping")
     public native NSDictionary<NSString, ?> getAdUnitMapping();
+    @Property(selector = "adSourceName")
+    public native String getAdSourceName();
+    @Property(selector = "adSourceID")
+    public native String getAdSourceID();
+    @Property(selector = "adSourceInstanceName")
+    public native String getAdSourceInstanceName();
     @Property(selector = "adSourceInstanceID")
     public native String getAdSourceInstanceID();
     @Property(selector = "error")

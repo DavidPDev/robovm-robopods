@@ -95,6 +95,10 @@ classes:
                 name: getQuery
             '-runTransactionWithOptions:block:completion:':
                 name: runTransaction
+            '-setIndexConfigurationFromJSON:completion:':
+                name: setIndexConfigurationFromJSON
+            '-setIndexConfigurationFromStream:completion:':
+                name: setIndexConfigurationFromStream
     FIRFirestoreSettings: {}
     FIRGeoPoint:
         methods:

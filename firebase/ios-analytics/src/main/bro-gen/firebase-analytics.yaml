@@ -20,6 +20,8 @@ classes:
                 name: handleEventsForBackgroundURLSession
             '+initiateOnDeviceConversionMeasurementWithEmailAddress:':
                 name: initiateOnDeviceConversionMeasurement
+            '+sessionIDWithCompletion:':
+                name: sessionID
 protocols: {}
 
 functions:

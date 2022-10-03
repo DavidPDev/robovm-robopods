@@ -57,6 +57,10 @@ import org.robovm.apple.dispatch.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "setIndexConfigurationFromJSON:completion:")
+    public native void setIndexConfigurationFromJSON(String json, @Block VoidBlock1<NSError> completion);
+    @Method(selector = "setIndexConfigurationFromStream:completion:")
+    public native void setIndexConfigurationFromStream(NSInputStream stream, @Block VoidBlock1<NSError> completion);
     @Method(selector = "collectionWithPath:")
     public native FIRCollectionReference getCollection(String collectionPath);
     @Method(selector = "documentWithPath:")
