@@ -31,6 +31,7 @@ This is the list of currently available AltPods. Click them to get more informat
 | [Pollfish](pollfish/)           | Simple Surveys                                                                                                                                                     |
 | [SAMKeychain](samkeychain/)     | SAMKeychain is a simple wrapper for accessing accounts, getting passwords, setting passwords, and deleting passwords using the system Keychain on Mac OS X and iOS |
 | [Singular](singular/)           | Singular iOS SDK                                                                                                                                                   |
+| [Tenjin](tenjin/)               | Tenjin iOS SDK                                                                                                                                                     |
 | [UnityAds](unitryads/)          | Unity Ads is a comprehensive monetization platform for Unity, iOS, and Android developers                                                                          |
 | [YouTubePlayer](youtube/)       | Lightweight helper library that allows iOS developers to add inline playback of YouTube videos through a WebView                                                   |
 
@@ -59,6 +60,7 @@ v1.26.0 - in development
 | [Pollfish](pollfish/)           | 6.2.5  |
 | [SAMKeychain](samkeychain/)     | 1.5.3  |
 | [Singular](singular/)           | 11.0.7 |
+| [Tenjin](tenjin/)               | 1.12.18|
 | [UnityAds](unityads/)           | 4.3.0  |
 | [YouTubePlayer](youtube/)       | 1.0.4  |
 
