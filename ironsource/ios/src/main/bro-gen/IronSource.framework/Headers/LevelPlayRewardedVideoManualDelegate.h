@@ -11,7 +11,7 @@
 
 #import "ISAdInfo.h"
 
-@protocol LevelPlayRewardedVideoManualDelegate <LevelPlayRewardedVideoDelegate>
+@protocol LevelPlayRewardedVideoManualDelegate <LevelPlayRewardedVideoBaseDelegate>
 
 @required
 

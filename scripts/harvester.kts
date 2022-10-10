@@ -365,7 +365,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
         )
     },
     "IronSource" to { framework ->
-        val artifactLocation = downloadFolder.extend("IronSource/$framework.framework")
+        val artifactLocation = downloadFolder.extend("IronSource/IronSource.xcframework/ios-arm64_armv7/$framework.framework")
         processFramework(
             artifact = "$framework.framework",
             moduleFolder = "ironsource/ios",

@@ -52,7 +52,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("bannerDidLoad:instanceId:")
-    public void bannerDidLoad(ISBannerView bannerView, String instanceId) {}
+    public void bannerDidLoad(ISDemandOnlyBannerView bannerView, String instanceId) {}
     @NotImplemented("bannerDidFailToLoadWithError:instanceId:")
     public void bannerDidFailToLoad(NSError error, String instanceId) {}
     @NotImplemented("bannerDidShow:")
@@ -61,9 +61,5 @@ import org.robovm.apple.coreanimation.*;
     public void didClickBanner(String instanceId) {}
     @NotImplemented("bannerWillLeaveApplication:")
     public void bannerWillLeaveApplication(String instanceId) {}
-    @NotImplemented("bannerWillPresentScreen:")
-    public void bannerWillPresentScreen(String instanceId) {}
-    @NotImplemented("bannerDidDismissScreen:")
-    public void bannerDidDismissScreen(String instanceId) {}
     /*</methods>*/
 }

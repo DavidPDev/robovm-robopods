@@ -158,14 +158,14 @@ import org.robovm.apple.coreanimation.*;
     public native boolean didSetConsent();
     @Property(selector = "setDidSetConsent:")
     public native void setDidSetConsent(boolean v);
-    @Property(selector = "batchGenricParams")
-    public native NSDictionary<?, ?> getBatchGenricParams();
-    @Property(selector = "setBatchGenricParams:")
-    public native void setBatchGenricParams(NSDictionary<?, ?> v);
-    @Property(selector = "eventGenricParams")
-    public native NSDictionary<?, ?> getEventGenricParams();
-    @Property(selector = "setEventGenricParams:")
-    public native void setEventGenricParams(NSDictionary<?, ?> v);
+    @Property(selector = "batchGenericParams")
+    public native NSDictionary<?, ?> getBatchGenericParams();
+    @Property(selector = "setBatchGenericParams:")
+    public native void setBatchGenericParams(NSDictionary<?, ?> v);
+    @Property(selector = "eventGenericParams")
+    public native NSDictionary<?, ?> getEventGenericParams();
+    @Property(selector = "setEventGenericParams:")
+    public native void setEventGenericParams(NSDictionary<?, ?> v);
     @Property(selector = "eventPixelParams")
     public native NSDictionary<?, ?> getEventPixelParams();
     @Property(selector = "setEventPixelParams:")

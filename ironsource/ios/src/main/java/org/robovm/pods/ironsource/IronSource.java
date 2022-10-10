@@ -48,7 +48,7 @@ import org.robovm.apple.coreanimation.*;
     public static final String IS_INTERSTITIAL = "interstitial";
     public static final String IS_OFFERWALL = "offerwall";
     public static final String IS_BANNER = "banner";
-    public static final String getSdkVersion = "7.2.3";
+    public static final String getSdkVersion = "7.2.5";
     public static final String DataSource_MOPUB = "MoPub";
     /*</constants>*/
     /*<constructors>*/
@@ -105,8 +105,8 @@ import org.robovm.apple.coreanimation.*;
     public static native void initISDemandOnly(String appKey, NSArray<NSString> adUnits);
     @Method(selector = "setRewardedVideoDelegate:")
     public static native void setRewardedVideoDelegate(ISRewardedVideoDelegate delegate);
-    @Method(selector = "setLevelPlayRewardedVideoAutomaticDelegate:")
-    public static native void setLevelPlayRewardedVideoAutomaticDelegate(LevelPlayRewardedVideoAutomaticDelegate delegate);
+    @Method(selector = "setLevelPlayRewardedVideoDelegate:")
+    public static native void setLevelPlayRewardedVideoDelegate(LevelPlayRewardedVideoDelegate delegate);
     @Method(selector = "showRewardedVideoWithViewController:")
     public static native void showRewardedVideo(UIViewController viewController);
     @Method(selector = "showRewardedVideoWithViewController:placement:")
@@ -185,8 +185,12 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean isBannerCappedForPlacement(String placementName);
     @Method(selector = "setISDemandOnlyBannerDelegate:")
     public static native void setISDemandOnlyBannerDelegate(ISDemandOnlyBannerDelegate delegate);
-    @Method(selector = "loadISDemandOnlyBannerWithInstanceId:adm:viewController:size:")
-    public static native void loadISDemandOnlyBanner(String instanceId, String adm, UIViewController viewController, ISBannerSize size);
+    @Method(selector = "loadISDemandOnlyBannerWithAdm:instanceId:viewController:size:")
+    public static native void loadISDemandOnlyBanner(String adm, String instanceId, UIViewController viewController, ISBannerSize size);
+    @Method(selector = "loadISDemandOnlyBannerWithInstanceId:viewController:size:")
+    public static native void loadISDemandOnlyBanner(String instanceId, UIViewController viewController, ISBannerSize size);
+    @Method(selector = "destroyISDemandOnlyBannerWithInstanceId:")
+    public static native void destroyISDemandOnlyBanner(String instanceId);
     @Method(selector = "setLogDelegate:")
     public static native void setLogDelegate(ISLogDelegate delegate);
     @Method(selector = "setConsent:")

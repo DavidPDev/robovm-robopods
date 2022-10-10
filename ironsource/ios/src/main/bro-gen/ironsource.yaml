@@ -127,10 +127,17 @@ classes:
                 name: loadConsentView
             '+showConsentViewWithViewController:andType:':
                 name: showConsentView
+            '+loadISDemandOnlyBannerWithAdm:instanceId:viewController:size:':
+                name: loadISDemandOnlyBanner
+            '+loadISDemandOnlyBannerWithInstanceId:viewController:size:':
+                name: loadISDemandOnlyBanner
+            '+destroyISDemandOnlyBannerWithInstanceId:':
+                name: destroyISDemandOnlyBanner
     ISAdInfo:
         methods:
             '-initWithImpressionData:':
                 name: init
+    ISDemandOnlyBannerView: { }
 protocols:
     ISAdapterAdDelegate:
         methods:
@@ -272,12 +279,26 @@ protocols:
                 name: didClick
             '-didCloseWithAdInfo:':
                 name: didClose
+            '-hasAvailableAdWithAdInfo:':
+                name: hasAvailableAd
     LevelPlayRewardedVideoManualDelegate:
         methods:
             '-didLoadWithAdInfo:':
                 name: didLoad
             '-didFailToLoadWithError:':
                 name: didFailToLoad
+    LevelPlayRewardedVideoBaseDelegate:
+        methods:
+            '-didReceiveRewardForPlacement:withAdInfo:':
+                name: didReceiveReward
+            '-didFailToShowWithError:andAdInfo:':
+                name: didFailToShow
+            '-didOpenWithAdInfo:':
+                name: didOpen
+            '-didClick:withAdInfo:':
+                name: didClick
+            '-didCloseWithAdInfo:':
+                name: didClose
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

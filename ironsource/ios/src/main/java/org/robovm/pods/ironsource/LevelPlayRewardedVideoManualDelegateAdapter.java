@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/LevelPlayRewardedVideoManualDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/LevelPlayRewardedVideoDelegateAdapter/*</extends>*/ 
+    extends /*<extends>*/LevelPlayRewardedVideoBaseDelegateAdapter/*</extends>*/ 
     /*<implements>*/implements LevelPlayRewardedVideoManualDelegate/*</implements>*/ {
 
     /*<ptr>*/

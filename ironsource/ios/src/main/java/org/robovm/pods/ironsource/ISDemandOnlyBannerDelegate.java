@@ -50,7 +50,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "bannerDidLoad:instanceId:")
-    void bannerDidLoad(ISBannerView bannerView, String instanceId);
+    void bannerDidLoad(ISDemandOnlyBannerView bannerView, String instanceId);
     @Method(selector = "bannerDidFailToLoadWithError:instanceId:")
     void bannerDidFailToLoad(NSError error, String instanceId);
     @Method(selector = "bannerDidShow:")
@@ -59,10 +59,6 @@ import org.robovm.apple.coreanimation.*;
     void didClickBanner(String instanceId);
     @Method(selector = "bannerWillLeaveApplication:")
     void bannerWillLeaveApplication(String instanceId);
-    @Method(selector = "bannerWillPresentScreen:")
-    void bannerWillPresentScreen(String instanceId);
-    @Method(selector = "bannerDidDismissScreen:")
-    void bannerDidDismissScreen(String instanceId);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

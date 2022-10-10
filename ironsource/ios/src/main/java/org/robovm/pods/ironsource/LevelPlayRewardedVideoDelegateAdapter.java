@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/LevelPlayRewardedVideoDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
+    extends /*<extends>*/LevelPlayRewardedVideoBaseDelegateAdapter/*</extends>*/ 
     /*<implements>*/implements LevelPlayRewardedVideoDelegate/*</implements>*/ {
 
     /*<ptr>*/
@@ -51,15 +51,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("didReceiveRewardForPlacement:withAdInfo:")
-    public void didReceiveReward(ISPlacementInfo placementInfo, ISAdInfo adInfo) {}
-    @NotImplemented("didFailToShowWithError:andAdInfo:")
-    public void didFailToShow(NSError error, ISAdInfo adInfo) {}
-    @NotImplemented("didOpenWithAdInfo:")
-    public void didOpen(ISAdInfo adInfo) {}
-    @NotImplemented("didClick:withAdInfo:")
-    public void didClick(ISPlacementInfo placementInfo, ISAdInfo adInfo) {}
-    @NotImplemented("didCloseWithAdInfo:")
-    public void didClose(ISAdInfo adInfo) {}
+    @NotImplemented("hasAvailableAdWithAdInfo:")
+    public void hasAvailableAd(ISAdInfo adInfo) {}
+    @NotImplemented("hasNoAvailableAd")
+    public void hasNoAvailableAd() {}
     /*</methods>*/
 }
