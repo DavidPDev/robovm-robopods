@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -103,8 +105,6 @@ import org.robovm.apple.coreanimation.*;
     public native void logPushNotificationOpen(NSDictionary<NSString, ?> payload, String action);
     @Method(selector = "logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:")
     public native void logProductItem(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<NSString, ?> parameters);
-    @Method(selector = "activateApp")
-    public native void activateApp();
     @Method(selector = "setPushNotificationsDeviceToken:")
     public native void setPushNotificationsDeviceToken(NSData deviceToken);
     @Method(selector = "setPushNotificationsDeviceTokenString:")

@@ -33,6 +33,7 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.photos.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.corebasics.*;
 import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
@@ -42,7 +43,7 @@ import org.robovm.pods.facebook.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKShareMediaContent/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKSharingContent, FBSDKSharingValidatable/*</implements>*/ {
+    /*<implements>*/implements FBSDKSharingValidatable, FBSDKSharingContent/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKShareMediaContentPtr extends Ptr<FBSDKShareMediaContent, FBSDKShareMediaContentPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKShareMediaContent.class); }/*</bind>*/
@@ -86,8 +87,6 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "addParameters:bridgeOptions:")
-    public native NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
     public boolean validate(FBSDKShareBridgeOptions bridgeOptions) throws NSErrorException {
        NSError.NSErrorPtr ptr = new NSError.NSErrorPtr();
        boolean result = validate(bridgeOptions, ptr);
@@ -96,5 +95,7 @@ import org.robovm.pods.facebook.core.*;
     }
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr error);
+    @Method(selector = "addParameters:bridgeOptions:")
+    public native NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
     /*</methods>*/
 }

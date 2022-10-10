@@ -33,6 +33,7 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.photos.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.corebasics.*;
 import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
@@ -42,24 +43,19 @@ import org.robovm.pods.facebook.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSendButton/*</name>*/ 
     extends /*<extends>*/FBSDKButton/*</extends>*/ 
-    /*<implements>*/implements FBSDKButtonImpressionLogging, FBSDKSharingButton/*</implements>*/ {
+    /*<implements>*/implements FBSDKSharingButton/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKSendButtonPtr extends Ptr<FBSDKSendButton, FBSDKSendButtonPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKSendButton.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKSendButton() {}
+    protected FBSDKSendButton() {}
     protected FBSDKSendButton(Handle h, long handle) { super(h, handle); }
     protected FBSDKSendButton(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
     public FBSDKSendButton(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
     public FBSDKSendButton(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
-    /**
-     * @since Available in iOS 14.0 and later.
-     */
-    @Method(selector = "initWithFrame:primaryAction:")
-    public FBSDKSendButton(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "dialog")
@@ -78,9 +74,6 @@ import org.robovm.pods.facebook.core.*;
     public native String getImpressionTrackingIdentifier();
     @Property(selector = "isImplicitlyDisabled")
     public native boolean isImplicitlyDisabled();
-    @WeaklyLinked
-    @Property(selector = "layerClass")
-    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -90,25 +83,5 @@ import org.robovm.pods.facebook.core.*;
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
-    /**
-     * @since Available in iOS 13.0 and later.
-     */
-    @Method(selector = "systemButtonWithImage:target:action:")
-    public static native FBSDKSendButton getSystemButtonWithImage(UIImage image, NSObject target, Selector action);
-    /**
-     * @since Available in iOS 14.0 and later.
-     */
-    @Method(selector = "systemButtonWithPrimaryAction:")
-    public static native FBSDKSendButton getSystemButtonWithPrimaryAction(UIAction primaryAction);
-    /**
-     * @since Available in iOS 9.0 and later.
-     */
-    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
-    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
-    /**
-     * @since Available in iOS 10.0 and later.
-     */
-    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
-    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

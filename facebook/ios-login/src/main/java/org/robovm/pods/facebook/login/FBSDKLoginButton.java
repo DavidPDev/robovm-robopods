@@ -48,16 +48,11 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKLoginButton.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKLoginButton() {}
+    protected FBSDKLoginButton() {}
     protected FBSDKLoginButton(Handle h, long handle) { super(h, handle); }
     protected FBSDKLoginButton(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
     public FBSDKLoginButton(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
-    /**
-     * @since Available in iOS 14.0 and later.
-     */
-    @Method(selector = "initWithFrame:primaryAction:")
-    public FBSDKLoginButton(@ByVal CGRect frame, UIAction primaryAction) { super(frame, primaryAction); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "defaultAudience")
@@ -100,9 +95,6 @@ import org.robovm.pods.facebook.corebasics.*;
     public native FBSDKCodeVerifier getCodeVerifier();
     @Property(selector = "setCodeVerifier:")
     public native void setCodeVerifier(FBSDKCodeVerifier v);
-    @WeaklyLinked
-    @Property(selector = "layerClass")
-    public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -118,25 +110,5 @@ import org.robovm.pods.facebook.corebasics.*;
     public native void layoutSubviews();
     @Method(selector = "sizeThatFits:")
     public native @ByVal CGSize getSizeThatFits(@ByVal CGSize size);
-    /**
-     * @since Available in iOS 13.0 and later.
-     */
-    @Method(selector = "systemButtonWithImage:target:action:")
-    public static native FBSDKLoginButton getSystemButtonWithImage(UIImage image, NSObject target, Selector action);
-    /**
-     * @since Available in iOS 14.0 and later.
-     */
-    @Method(selector = "systemButtonWithPrimaryAction:")
-    public static native FBSDKLoginButton getSystemButtonWithPrimaryAction(UIAction primaryAction);
-    /**
-     * @since Available in iOS 9.0 and later.
-     */
-    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:")
-    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute attribute);
-    /**
-     * @since Available in iOS 10.0 and later.
-     */
-    @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
-    public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     /*</methods>*/
 }

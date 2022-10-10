@@ -7,7 +7,8 @@ headers:
     - FBAEMKit-Swift.h
 
 enums:
-    FBAEMAdvertiserRuleOperator: {}
+    FBAEMAdvertiserRuleOperator:
+        exclude: true #INTERNAL - DO NOT USE
 
 typed_enums:
 
@@ -16,102 +17,50 @@ categories:
 classes:
     FBAEMReporter:
         methods:
-            '+configureWithNetworker:appID:':
-                name: configure
             '+configureWithNetworker:appID:reporter:':
-                name: configure
+                exclude: true #INTERNAL - DO NOT USE
             '+configureWithNetworker:appID:reporter:analyticsAppID:':
-                name: configure
+                exclude: true #INTERNAL - DO NOT USE
             '+recordAndUpdateEvent:currency:value:parameters:':
                 name: recordAndUpdateEvent
-    FBAEMAdvertiserRuleFactory: {}
+    FBAEMAdvertiserRuleFactory:
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMAdvertiserSingleEntryRule:
-        methods:
-            '-initWithOperator:paramKey:linguisticCondition:numericalCondition:arrayCondition:':
-                name: init
-            '-copyWithZone:':
-                exclude: true
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMInvocation:
-        methods:
-            '-attributeEvent:currency:value:parameters:configs:shouldUpdateCache:':
-                name: attributeEvent
-            '-updateConversionValueWithConfigs:event:shouldBoostPriority:':
-                name: updateConversionValue
-            '-isOptimizedEvent:configs:':
-                name: isOptimizedEvent
-            '-isOutOfWindowWithConfigs:':
-                name: isOutOfWindow
-            '-initWithAppLinkData:':
-                name: init
-            '+invocationWithAppLinkData:':
-                exclude: true
-            '-attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:':
-                name: attributeEvent
-            '-updateConversionValueWithConfigurations:event:shouldBoostPriority:':
-                name: updateConversionValue
-            '-isOptimizedEvent:configurations:':
-                name: isOptimizedEvent
-            '-isOutOfWindowWithConfigurations:':
-                name: isOutOfWindow
-            '-getHMACWithDelay:':
-                name: getHMAC
-            '-attributeEvent:currency:value:parameters:configurations:shouldUpdateCache:isRuleMatchInServer:':
-                name: attributeEvent
-    FBAEMNetworker: {}
+        exclude: true #INTERNAL - DO NOT USE
+    FBAEMNetworker:
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMRequestBody:
-        methods:
-            '-appendWithKey:formValue:':
-                name: append
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMRule:
-        methods:
-            '-initWithJSON:':
-                name: init
-            '-isMatchedWithRecordedEvents:recordedValues:':
-                name: isMatched
-            '-copyWithZone:':
-                exclude: true
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMUtility:
         methods:
             '-getInSegmentValue:matchingRule:':
-                name: getInSegmentValue
+                exclude: true # uses INTERNAL APIs
             '-getMatchedInvocation:businessID:':
-                name: getMatchedInvocation
+                exclude: true # uses INTERNAL APIs
+            '-getBusinessIDsInOrder:':
+                exclude: true # uses INTERNAL APIs
     FBAEMAdvertiserMultiEntryRule:
-        methods:
-            '-initWithOperator:rules:':
-                name: init
-            '-copyWithZone:':
-                exclude: true
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMConfiguration:
-        methods:
-            '-initWithJSON:':
-                name: init
-            '-isSameValidFrom:businessID:':
-                name: isSame
-            '-copyWithZone:':
-                exclude: true
-            '+configureWithRuleProvider:':
-                name: configureWithRuleProvider$
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMEvent:
-        methods:
-            '-initWithJSON:':
-                name: init
-            '-copyWithZone:':
-                exclude: true
-    FBAEMSettings: {}
+        exclude: true #INTERNAL - DO NOT USE
+    FBAEMSettings:
+        exclude: true #INTERNAL - DO NOT USE
 protocols:
     FBAEMNetworking:
         methods:
             '-startGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:completion:':
                 name: startGraphRequest
     FBSKAdNetworkReporting: {}
-    FBAEMAdvertiserRuleMatching: {}
+    FBAEMAdvertiserRuleMatching:
+        exclude: true #INTERNAL - DO NOT USE
     FBAEMAdvertiserRuleProviding:
-        methods:
-            '-createRuleWithJson:':
-                name: createRule
-            '-createRuleWithDict:':
-                name: createRule
+        exclude: true #INTERNAL - DO NOT USE
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

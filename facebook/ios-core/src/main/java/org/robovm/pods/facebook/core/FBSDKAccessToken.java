@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -41,7 +43,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAccessToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, NSSecureCoding, FBSDKAccessTokenProviding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAccessTokenPtr extends Ptr<FBSDKAccessToken, FBSDKAccessTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAccessToken.class); }/*</bind>*/
@@ -62,10 +64,6 @@ import org.robovm.apple.coreanimation.*;
     public static native void setCurrentAccessToken(FBSDKAccessToken v);
     @Property(selector = "isCurrentAccessTokenActive")
     public static native boolean isCurrentAccessTokenIsActive();
-    @Property(selector = "tokenCache")
-    public static native FBSDKTokenCaching getTokenCache();
-    @Property(selector = "setTokenCache:")
-    public static native void setTokenCache(FBSDKTokenCaching v);
     @Property(selector = "appID")
     public native String getAppID();
     @Property(selector = "dataAccessExpirationDate")

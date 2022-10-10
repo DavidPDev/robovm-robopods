@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -56,10 +58,6 @@ import org.robovm.apple.coreanimation.*;
     String getClientToken();
     @Property(selector = "setClientToken:")
     void setClientToken(String v);
-    @Property(selector = "userAgentSuffix")
-    String getUserAgentSuffix();
-    @Property(selector = "setUserAgentSuffix:")
-    void setUserAgentSuffix(String v);
     @Property(selector = "sdkVersion")
     String getSdkVersion();
     @Property(selector = "displayName")
@@ -94,8 +92,6 @@ import org.robovm.apple.coreanimation.*;
     boolean isSetATETimeExceedsInstallTime();
     @Property(selector = "isSKAdNetworkReportEnabled")
     boolean isSKAdNetworkReportEnabled();
-    @Property(selector = "advertisingTrackingStatus")
-    FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus();
     @Property(selector = "installTimestamp")
     NSDate getInstallTimestamp();
     @Property(selector = "advertiserTrackingEnabledTimestamp")

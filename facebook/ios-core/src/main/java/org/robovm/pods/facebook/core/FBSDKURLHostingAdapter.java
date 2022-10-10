@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -53,9 +55,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("appURLWithHost:path:queryParameters:error:")
-    public NSURL appURL(String host, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
-    @NotImplemented("facebookURLWithHostPrefix:path:queryParameters:error:")
-    public NSURL facebookURL(String hostPrefix, String path, NSDictionary<NSString, NSString> queryParameters, NSError.NSErrorPtr errorRef) { return null; }
+    
     /*</methods>*/
 }

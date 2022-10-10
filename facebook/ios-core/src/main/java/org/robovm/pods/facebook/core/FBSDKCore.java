@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -47,8 +49,8 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/
     /*</bind>*/
     /*<constants>*/
-    public static final String Version = "14.1.0";
-    public static final String DefaultGraphApiVersion = "v14.0";
+    public static final String Version = "15.0.0";
+    public static final String DefaultGraphApiVersion = "v15.0";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

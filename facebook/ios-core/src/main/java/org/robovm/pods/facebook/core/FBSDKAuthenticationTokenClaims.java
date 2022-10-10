@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,53 +52,12 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAuthenticationTokenClaims() {}
     protected FBSDKAuthenticationTokenClaims(Handle h, long handle) { super(h, handle); }
     protected FBSDKAuthenticationTokenClaims(SkipInit skipInit) { super(skipInit); }
-    public FBSDKAuthenticationTokenClaims(String encodedClaims, String expectedNonce) { super((Handle) null, create(encodedClaims, expectedNonce)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "jti")
-    public native String getJti();
-    @Property(selector = "iss")
-    public native String getIss();
-    @Property(selector = "aud")
-    public native String getAud();
-    @Property(selector = "nonce")
-    public native String getNonce();
-    @Property(selector = "exp")
-    public native double getExp();
-    @Property(selector = "iat")
-    public native double getIat();
-    @Property(selector = "sub")
-    public native String getSub();
-    @Property(selector = "name")
-    public native String getName();
-    @Property(selector = "givenName")
-    public native String getGivenName();
-    @Property(selector = "middleName")
-    public native String getMiddleName();
-    @Property(selector = "familyName")
-    public native String getFamilyName();
-    @Property(selector = "email")
-    public native String getEmail();
-    @Property(selector = "picture")
-    public native String getPicture();
-    @Property(selector = "userFriends")
-    public native NSArray<NSString> getUserFriends();
-    @Property(selector = "userBirthday")
-    public native String getUserBirthday();
-    @Property(selector = "userAgeRange")
-    public native NSDictionary<NSString, NSNumber> getUserAgeRange();
-    @Property(selector = "userHometown")
-    public native NSDictionary<NSString, NSString> getUserHometown();
-    @Property(selector = "userLocation")
-    public native NSDictionary<NSString, NSString> getUserLocation();
-    @Property(selector = "userGender")
-    public native String getUserGender();
-    @Property(selector = "userLink")
-    public native String getUserLink();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "claimsFromEncodedString:nonce:")
-    protected static native @Pointer long create(String encodedClaims, String expectedNonce);
+    
     /*</methods>*/
 }

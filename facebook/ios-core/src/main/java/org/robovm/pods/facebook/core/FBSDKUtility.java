@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -78,7 +80,5 @@ import org.robovm.apple.coreanimation.*;
     public static native String SHA256Hash(NSObject input);
     @Method(selector = "getGraphDomainFromToken")
     public static native String getGraphDomainFromToken();
-    @Method(selector = "unversionedFacebookURLWithHostPrefix:path:queryParameters:error:")
-    public static native NSURL getUnversionedFacebookURL(String hostPrefix, String path, NSDictionary<NSString, ?> queryParameters, NSError.NSErrorPtr errorRef);
     /*</methods>*/
 }

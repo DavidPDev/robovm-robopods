@@ -70,61 +70,28 @@ classes:
             '-updateSessionWithBlock:':
                 name: updateSession
     FBSDKURLSessionTask:
-        methods:
-            '-initWithRequest:fromSession:completionHandler:':
-                name: init
+        exclude: true #INTERNAL - DO NOT USE # TODO: dkimitsa: seems to be internal class
 
 protocols:
     FBSDKCrashHandler:
         name: FBSDKCrashHandlerProtocol
     FBSDKCrashObserving: {}
     FBSDKDataPersisting:
-        methods:
-            '-setInteger:forKey:':
-                name: setInteger
-            '-setObject:forKey:':
-                name: setObject
-            '-fb_setInteger:forKey:':
-                name: fb_setInteger
-            '-fb_setObject:forKey:':
-                name: fb_setObject
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKFileDataExtracting:
-        methods:
-            '+dataWithContentsOfFile:options:error:':
-                constructor: true
-                name: create
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKFileManaging:
-        methods:
-            '-URLForDirectory:inDomain:appropriateForURL:create:error:':
-                name: getURL
-                throws: NSErrorException
-            '-createDirectoryAtPath:withIntermediateDirectories:attributes:error:':
-                name: createDirectory
-                throws: NSErrorException
-            '-removeItemAtPath:error:':
-                name: removeItem
-                throws: NSErrorException
-            '-contentsOfDirectoryAtPath:error:':
-                name: getContentsOfDirectory
-                throws: NSErrorException
-            '-fb_createDirectoryAtPath:withIntermediateDirectories:attributes:error:':
-                name: fb_createDirectory
-            '-fb_removeItemAtPath:error:':
-                name: fb_removeItem
-            '-fb_contentsOfDirectoryAtPath:error:':
-                name: fb_contentsOfDirectory
-    FBSDKInfoDictionaryProviding: {}
-    FBSDKSessionDataTask: {}
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKInfoDictionaryProviding:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKSessionProviding:
-        methods:
-            '-dataTaskWithRequest:completionHandler:':
-                name: getDataTask
-    FBSDKNetworkTask: { }
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKNetworkTask:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKURLSessionProviding:
-        methods:
-            '-fb_dataTaskWithRequest:completionHandler:':
-                name: fb_dataTask
-
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKNotificationDelivering:
+        exclude: true #INTERNAL - DO NOT USE
 functions:
     fb_dispatch_on_main_thread:
         class: FBSDKBasicUtility

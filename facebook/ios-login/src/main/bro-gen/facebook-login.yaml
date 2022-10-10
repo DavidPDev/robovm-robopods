@@ -8,7 +8,7 @@ include:
     - coreanimation
     - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
     - ../../../../ios-core-basics/src/main/bro-gen/facebook-core-basics.yaml
-clang_args: ['-x', 'objective-c', '-fobjc-arc']
+clang_args: ['-x', 'objective-c', '-fobjc-arc', '-Ffacebook/ios-aem/src/main/bro-gen/']
 headers:
     - FBSDKLoginKit.h
     - FBSDKLoginKit-Swift.h
@@ -47,7 +47,7 @@ classes:
     FBSDKDeviceLoginManagerResult:
         methods:
             '-initWithToken:isCancelled:':
-                name: init
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKLoginButton:
         methods:
             '-initWithFrame:':

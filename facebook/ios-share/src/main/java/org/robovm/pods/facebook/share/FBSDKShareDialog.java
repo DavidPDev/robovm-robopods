@@ -33,6 +33,7 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.photos.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.pods.facebook.corebasics.*;
 import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
@@ -42,7 +43,7 @@ import org.robovm.pods.facebook.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKShareDialog/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKSharingDialog, FBSDKWebDialogDelegate/*</implements>*/ {
+    /*<implements>*/implements FBSDKSharingDialog/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKShareDialogPtr extends Ptr<FBSDKShareDialog, FBSDKShareDialogPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKShareDialog.class); }/*</bind>*/
@@ -84,12 +85,6 @@ import org.robovm.pods.facebook.core.*;
     protected native @Pointer long init(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "showFromViewController:withContent:delegate:")
     public static native FBSDKShareDialog show(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
-    @Method(selector = "webDialog:didCompleteWithResults:")
-    public native void didComplete(FBSDKWebDialog webDialog, NSDictionary<NSString, ?> results);
-    @Method(selector = "webDialog:didFailWithError:")
-    public native void didFail(FBSDKWebDialog webDialog, NSError error);
-    @Method(selector = "webDialogDidCancel:")
-    public native void webDialogDidCancel(FBSDKWebDialog webDialog);
     @Method(selector = "show")
     public native boolean show();
     @Method(selector = "validateWithError:")

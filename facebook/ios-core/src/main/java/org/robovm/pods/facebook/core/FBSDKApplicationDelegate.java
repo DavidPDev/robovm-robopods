@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -52,24 +54,25 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKApplicationDelegate(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "sharedInstance")
-    public static native FBSDKApplicationDelegate getSharedInstance();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "application:continueUserActivity:")
-    public native boolean continueUserActivity(UIApplication application, NSUserActivity userActivity);
-    @Method(selector = "application:openURL:sourceApplication:annotation:")
-    public native boolean openURL(UIApplication application, NSURL url, String sourceApplication, NSObject annotation);
-    @Method(selector = "application:openURL:options:")
-    public native boolean openURL(UIApplication application, NSURL url, NSDictionary<NSString, ?> options);
-    @Method(selector = "application:didFinishLaunchingWithOptions:")
-    public native boolean didFinishLaunching(UIApplication application, NSDictionary<NSString, ?> launchOptions);
     @Method(selector = "initializeSDK")
     public native void initializeSDK();
+    @Method(selector = "application:continueUserActivity:")
+    public native boolean continueUserActivity(UIApplication application, NSUserActivity userActivity);
+    @Method(selector = "application:openURL:options:")
+    public native boolean openURL(UIApplication application, NSURL url, NSDictionary<NSString, ?> options);
+    @Method(selector = "application:openURL:sourceApplication:annotation:")
+    public native boolean openURL(UIApplication application, NSURL url, String sourceApplication, NSObject annotation);
+    @Method(selector = "application:didFinishLaunchingWithOptions:")
+    public native boolean didFinishLaunching(UIApplication application, NSDictionary<NSString, ?> launchOptions);
     @Method(selector = "addObserver:")
     public native void addObserver(FBSDKApplicationObserving observer);
     @Method(selector = "removeObserver:")
     public native void removeObserver(FBSDKApplicationObserving observer);
+    @Method(selector = "sharedInstance")
+    public static native FBSDKApplicationDelegate sharedInstance();
     /*</methods>*/
 }

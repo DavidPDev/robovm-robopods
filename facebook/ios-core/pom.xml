@@ -7,9 +7,16 @@
     </parent>
 
     <artifactId>robopods-facebook-core-ios</artifactId>
-    <name>RoboPods Facebook Core iOS v14.1.0</name>
+    <name>RoboPods Facebook Core iOS v15.0.0</name>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.dkimitsa.robovm</groupId>
+            <artifactId>robopods-facebook-core-basics-ios</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>

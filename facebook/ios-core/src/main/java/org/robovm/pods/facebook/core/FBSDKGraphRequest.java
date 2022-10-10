@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -108,8 +110,6 @@ import org.robovm.apple.coreanimation.*;
     public native void setGraphErrorRecoveryDisabled(boolean disable);
     @Method(selector = "startWithCompletion:")
     public native FBSDKGraphRequestConnecting start(@Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
-    @Method(selector = "configureWithSettings:currentAccessTokenStringProvider:graphRequestConnectionFactory:")
-    public static native void configure(FBSDKSettingsProtocol settings, Class<?> accessTokenProvider, FBSDKGraphRequestConnectionFactoryProtocol _graphRequestConnectionFactory);
     @Method(selector = "formattedDescription")
     public native String formattedDescription();
     /*</methods>*/

@@ -51,8 +51,6 @@ import org.robovm.pods.facebook.corebasics.*;
     protected FBSDKDeviceLoginManagerResult() {}
     protected FBSDKDeviceLoginManagerResult(Handle h, long handle) { super(h, handle); }
     protected FBSDKDeviceLoginManagerResult(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithToken:isCancelled:")
-    public FBSDKDeviceLoginManagerResult(FBSDKAccessToken token, boolean cancelled) { super((SkipInit) null); initObject(init(token, cancelled)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "accessToken")
@@ -62,7 +60,6 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithToken:isCancelled:")
-    protected native @Pointer long init(FBSDKAccessToken token, boolean cancelled);
+    
     /*</methods>*/
 }

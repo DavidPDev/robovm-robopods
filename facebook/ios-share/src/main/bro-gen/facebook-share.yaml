@@ -7,8 +7,9 @@ include:
     - uikit
     - photos
     - coreanimation
+    - ../../../../ios-core-basics/src/main/bro-gen/facebook-core-basics.yaml
     - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
-clang_args: ['-x', 'objective-c', '-fobjc-arc']
+clang_args: ['-x', 'objective-c', '-fobjc-arc', '-Ffacebook/ios-aem/src/main/bro-gen/']
 headers:
     - "#include <FBSDKCoreKit/FBSDKCoreKit.h>"
     - "#include <FBSDKCoreKit/FBSDKCoreKit-Swift.h>"

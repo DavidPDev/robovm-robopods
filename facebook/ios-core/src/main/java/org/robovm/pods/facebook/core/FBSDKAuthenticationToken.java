@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -41,7 +43,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAuthenticationToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSObjectProtocol, NSSecureCoding, FBSDKAuthenticationTokenProviding/*</implements>*/ {
+    /*<implements>*/implements NSObjectProtocol, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAuthenticationTokenPtr extends Ptr<FBSDKAuthenticationToken, FBSDKAuthenticationTokenPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAuthenticationToken.class); }/*</bind>*/
@@ -50,8 +52,6 @@ import org.robovm.apple.coreanimation.*;
     protected FBSDKAuthenticationToken() {}
     protected FBSDKAuthenticationToken(Handle h, long handle) { super(h, handle); }
     protected FBSDKAuthenticationToken(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithTokenString:nonce:graphDomain:")
-    public FBSDKAuthenticationToken(String tokenString, String nonce, String graphDomain) { super((SkipInit) null); initObject(init(tokenString, nonce, graphDomain)); }
     @Method(selector = "initWithCoder:")
     public FBSDKAuthenticationToken(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
@@ -66,17 +66,11 @@ import org.robovm.apple.coreanimation.*;
     public native String getNonce();
     @Property(selector = "graphDomain")
     public native String getGraphDomain();
-    @Property(selector = "tokenCache")
-    public static native FBSDKTokenCaching getTokenCache();
-    @Property(selector = "setTokenCache:")
-    public static native void setTokenCache(FBSDKTokenCaching v);
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithTokenString:nonce:graphDomain:")
-    protected native @Pointer long init(String tokenString, String nonce, String graphDomain);
     @Method(selector = "claims")
     public native FBSDKAuthenticationTokenClaims claims();
     @Method(selector = "encodeWithCoder:")

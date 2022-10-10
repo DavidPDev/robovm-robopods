@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -85,5 +87,7 @@ import org.robovm.apple.coreanimation.*;
     public native void start();
     @Method(selector = "overrideGraphAPIVersion:")
     public native void overrideGraphAPIVersion(String version);
+    @Method(selector = "setCanMakeRequests")
+    public static native void setCanMakeRequests();
     /*</methods>*/
 }

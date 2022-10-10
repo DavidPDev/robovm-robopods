@@ -61,6 +61,10 @@ import org.robovm.pods.facebook.core.*;
     @StructMember(0) public native FBAdSize setSize(@ByVal CGSize size);
     /*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This adSize is DEPRECATED and will be removed.
+     */
+    @Deprecated
     @GlobalValue(symbol="kFBAdSize320x50", optional=true)
     public static native @ByVal FBAdSize _320x50();
     @GlobalValue(symbol="kFBAdSizeHeight50Banner", optional=true)

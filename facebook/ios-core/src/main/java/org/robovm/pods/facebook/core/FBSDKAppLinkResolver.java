@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -47,7 +49,7 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkResolver.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FBSDKAppLinkResolver() {}
+    public FBSDKAppLinkResolver() {}
     protected FBSDKAppLinkResolver(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkResolver(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -56,11 +58,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "appLinksFromURLs:handler:")
-    public native void appLinksFromURLs(NSArray<NSURL> urls, @Block VoidBlock2<NSDictionary<NSURL, FBSDKAppLink>, NSError> handler);
-    @Method(selector = "resolver")
-    public static native FBSDKAppLinkResolver resolver();
     @Method(selector = "appLinkFromURL:handler:")
     public native void getAppLink(NSURL url, @Block VoidBlock2<FBSDKAppLink, NSError> handler);
+    @Method(selector = "appLinksFrom:handler:")
+    public native void appLinks(NSArray<NSURL> urls, @Block VoidBlock2<NSDictionary<NSURL, FBSDKAppLink>, NSError> handler);
     /*</methods>*/
 }

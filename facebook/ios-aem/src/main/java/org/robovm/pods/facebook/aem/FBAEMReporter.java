@@ -51,10 +51,6 @@ import org.robovm.apple.foundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "configureWithNetworker:appID:reporter:")
-    public static native void configure(FBAEMNetworking networker, String appID, FBSKAdNetworkReporting reporter);
-    @Method(selector = "configureWithNetworker:appID:reporter:analyticsAppID:")
-    public static native void configure(FBAEMNetworking networker, String appID, FBSKAdNetworkReporting reporter, String analyticsAppID);
     @Method(selector = "enable")
     public static native void enable();
     @Method(selector = "setConversionFilteringEnabled:")

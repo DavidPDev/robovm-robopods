@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,14 +52,14 @@ import org.robovm.apple.coreanimation.*;
     public FBSDKProfilePictureView() {}
     protected FBSDKProfilePictureView(Handle h, long handle) { super(h, handle); }
     protected FBSDKProfilePictureView(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithFrame:profile:")
+    @Method(selector = "initWith:profile:")
     public FBSDKProfilePictureView(@ByVal CGRect frame, FBSDKProfile profile) { super((SkipInit) null); initObject(init(frame, profile)); }
     @Method(selector = "initWithProfile:")
     public FBSDKProfilePictureView(FBSDKProfile profile) { super((SkipInit) null); initObject(init(profile)); }
     @Method(selector = "initWithFrame:")
-    public FBSDKProfilePictureView(@ByVal CGRect frame) { super(frame); }
+    public FBSDKProfilePictureView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public FBSDKProfilePictureView(NSCoder coder) { super(coder); }
+    public FBSDKProfilePictureView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "pictureMode")
@@ -68,16 +70,28 @@ import org.robovm.apple.coreanimation.*;
     public native String getProfileID();
     @Property(selector = "setProfileID:")
     public native void setProfileID(String v);
+    @Property(selector = "bounds")
+    public native @ByVal CGRect getBounds();
+    @Property(selector = "setBounds:")
+    public native void setBounds(@ByVal CGRect v);
+    @Property(selector = "contentMode")
+    public native UIViewContentMode getContentMode();
+    @Property(selector = "setContentMode:")
+    public native void setContentMode(UIViewContentMode v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithFrame:profile:")
+    @Method(selector = "initWith:profile:")
     protected native @Pointer long init(@ByVal CGRect frame, FBSDKProfile profile);
     @Method(selector = "initWithProfile:")
     protected native @Pointer long init(FBSDKProfile profile);
+    @Method(selector = "initWithFrame:")
+    protected native @Pointer long init(@ByVal CGRect frame);
+    @Method(selector = "initWithCoder:")
+    protected native @Pointer long init(NSCoder coder);
     @Method(selector = "setNeedsImageUpdate")
     public native void setNeedsImageUpdate();
     /**

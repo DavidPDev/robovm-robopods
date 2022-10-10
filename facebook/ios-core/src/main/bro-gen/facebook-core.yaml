@@ -1,7 +1,15 @@
 package: org.robovm.pods.facebook.core
 framework: FBSDKCoreKit
-include: [foundation, dispatch, coregraphics, uikit, webkit, coreanimation]
-clang_args: ['-x', 'objective-c', '-fobjc-arc']
+include:
+    - foundation
+    - dispatch
+    - coregraphics
+    - uikit
+    - webkit
+    - coreanimation
+    - storekit
+    - ../../../../ios-core-basics/src/main/bro-gen/facebook-core-basics.yaml
+clang_args: ['-x', 'objective-c', '-fobjc-arc', '-Ffacebook/ios-aem/src/main/bro-gen/']
 headers: 
     - FBSDKCoreKit.h
     - FBSDKCoreKit-Swift.h
@@ -22,15 +30,23 @@ enums:
     FBSDKGraphRequestError: {}
     FBSDKGraphRequestFlags: {prefix: FBSDKGraphRequestFlag}
     FBSDKAppLinkNavigationType: {}
-    FBSDKBridgeAPIProtocolType: {}
+    FBSDKBridgeAPIProtocolType:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKProfilePictureMode: {}
-    FBSDKAdvertisingTrackingStatus: {prefix: FBSDKAdvertisingTracking}
-    FBSDKFeature: {}
+    FBSDKAdvertisingTrackingStatus:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKFeature:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsFlushReason:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKServerConfigurationSmartLoginOptions: { }
 typed_enums:
     FBSDKAppEventName:
         class: FBSDKAppEventName
         type: NSString
         prefix: FBSDKAppEventName
+        FBSDKAppEventNameInitializeSDK:
+            exclude: true #INTERNAL - DO NOT USE
     FBSDKAppEventParameterName:
         class: FBSDKAppEventParameterName # could be a dict but it would require to configure method for each key
         type: NSString
@@ -61,7 +77,11 @@ typed_enums:
         prefix: FBSDKURLScheme
 
 classes:
+    CoreUIApplication: {}
     FBSDKAccessToken:
+        properties:
+            tokenCache:
+                exclude: true #INTERNAL - DO NOT USE
         methods:
             '-initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:':
                 name: init
@@ -71,6 +91,8 @@ classes:
                 exclude: true # deprecated
             '+refreshCurrentAccessTokenWithCompletion:':
                 name: refreshCurrentAccessToken
+            '+configureWithTokenCache:graphRequestConnectionFactory:graphRequestPiggybackManager:errorFactory:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKAppEvents:
         properties:
             '+flushBehavior':
@@ -162,6 +184,8 @@ classes:
                 name: logInternalEvent
             '-logInternalEvent:parameters:isImplicitlyLogged:accessToken:':
                 name: logInternalEvent
+            '-flushForReason:':
+                exclude: true # INTERNAL
     FBSDKAppLink:
         methods:
             '+appLinkWithSourceURL:targets:webURL:':
@@ -188,17 +212,25 @@ classes:
                 name: navigateToURL
             '+navigateToURL:resolver:handler:':
                 name: navigateToURL
+            '+configureWithSettings:urlOpener:appLinkEventPoster:appLinkResolver:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKAppLinkResolver:
         methods:
             '-appLinksFromURLs:handler:':
                 name: appLinksFromURLs
-    FBSDKAppLinkResolverRequestBuilder: {}
+            '-appLinksFrom:handler:':
+                name: appLinks
+    FBSDKAppLinkResolverRequestBuilder:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKAppLinkTarget:
         methods:
             '+appLinkTargetWithURL:appStoreId:appName:':
                 name: create
                 constructor: true
-    FBSDKAppLinkUtility: {}
+    FBSDKAppLinkUtility:
+        methods:
+            '+configureWithGraphRequestFactory:infoDictionaryProvider:settings:appEventsConfigurationProvider:advertiserIDProvider:appEventsDropDeterminer:appEventParametersExtractor:appLinkURLFactory:userIDProvider:userDataStore:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKApplicationDelegate:
         methods:
             '-application:openURL:sourceApplication:annotation:':
@@ -210,57 +242,40 @@ classes:
             '-application:continueUserActivity:':
                 name: continueUserActivity
     FBSDKAuthenticationToken:
+        properties:
+            tokenCache:
+                exclude: true #INTERNAL - DO NOT USE
         methods:
             '-initWithTokenString:nonce:graphDomain:':
-                name: init
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKAuthenticationTokenClaims:
         methods:
-            '+claimsFromEncodedString:nonce:':
-                constructor: true
-                name: create
+            '-initWithEncodedClaims:nonce:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKBridgeAPI:
-        methods:
-            '-initWithProcessInfo:':
-                name: init
-            '-openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:':
-                name: openBridgeAPIRequest
-            '-openURLWithSafariViewController:sender:fromViewController:handler:':
-                name: openURL
-            '-openURL:sender:handler:':
-                name: openURL
-            '-initWithProcessInfo:logger:urlOpener:bridgeAPIResponseFactory:frameworkLoader:appURLSchemeProvider:':
-                name: init
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKBridgeAPIRequest:
-        methods:
-            '+bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
-                name: create
-                constructor: true
-            '+bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:':
-                constructor: true
-                name: create
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKBridgeAPIResponse:
-        methods:
-            '+bridgeAPIResponseWithRequest:error:':
-                name: create
-                constructor: true
-            '+bridgeAPIResponseWithRequest:responseURL:sourceApplication:error:':
-                name: create
-                constructor: true
-            '+bridgeAPIResponseCancelledWithRequest:':
-                name: create
-                constructor: true
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKButton:
         methods:
             '-configureWithIcon:title:backgroundColor:highlightedColor:':
-                name: configure
+                exclude: true # uses INTERNAL FBSDKIcon - DO NOT USE
             '-configureWithIcon:title:backgroundColor:highlightedColor:selectedTitle:selectedIcon:selectedColor:selectedHighlightedColor:':
-                name: configure
+                exclude: true #INTERNAL - DO NOT USE
+            '-defaultBackgroundColor':
+                exclude: true #INTERNAL - DO NOT USE
             '-sizeThatFits:title:':
-                name: getSizeThatFits
+                exclude: true #INTERNAL - DO NOT USE
             '-textSizeForText:font:constrainedSize:lineBreakMode:':
-                name: getTextSizeForText
+                exclude: true #INTERNAL - DO NOT USE
             '-logTapEventWithEventName:parameters:':
-                name: logTapEvent
+                exclude: true #INTERNAL - DO NOT USE
+            '+configureWithApplicationActivationNotifier:eventLogger:accessTokenProvider:':
+                exclude: true #INTERNAL - DO NOT USE
+            '+configureWithImpressionLoggerFactory:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKGraphErrorRecoveryProcessor:
         methods:
             '+new':
@@ -290,7 +305,7 @@ classes:
             '-initWithGraphPath:parameters:tokenString:HTTPMethod:flags:':
                 name: init
             '+configureWithSettings:currentAccessTokenStringProvider:graphRequestConnectionFactory:':
-                name: configure
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKGraphRequestConnection:
         methods:
             '-addRequest:completionHandler:':
@@ -305,13 +320,20 @@ classes:
                 name: addRequest
             '-addRequest:parameters:completion:':
                 name: addRequest
+            'setCanMakeRequests':
+                exclude: true #INTERNAL - DO NOT USE
+            '+configureWithURLSessionProxyFactory:errorConfigurationProvider:piggybackManager:settings:graphRequestConnectionFactory:eventLogger:operatingSystemVersionComparer:macCatalystDeterminator:accessTokenProvider:errorFactory:authenticationTokenProvider:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKGraphRequestDataAttachment:
         methods:
             '-initWithData:filename:contentType:':
                 name: init
     FBSDKImpressionTrackingButton: {}
     FBSDKLocation: {}
-    FBSDKMeasurementEvent: {}
+    FBSDKMeasurementEvent:
+        methods:
+            '-postNotificationForEventName:args:':
+                name: postNotification
     FBSDKProfile:
         methods:
             '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:':
@@ -324,11 +346,17 @@ classes:
                 name: init
             '-initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:':
                 name: init
+            '+imageURLForProfileID:pictureMode:size:':
+                exclude: true #INTERNAL - DO NOT USE
+            '+configureWithDataStore:accessTokenProvider:notificationCenter:settings:urlHoster:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKProfilePictureView:
         methods:
             '-initWithFrame:profile:':
                 name: init
             '-initWithProfile:':
+                name: init
+            '-initWith:profile:':
                 name: init
     FBSDKSettings:
         properties:
@@ -383,6 +411,8 @@ classes:
                 exclude: true # as deprecated
             '+disableLoggingBehavior:':
                 exclude: true # as deprecated
+            '-configureWithStore:appEventsConfigurationProvider:infoDictionaryProvider:eventLogger:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKURL:
         methods:
             '+URLWithURL:':
@@ -391,6 +421,8 @@ classes:
             '+URLWithInboundURL:sourceApplication:':
                 name: create
                 constructor: true
+            '+configureWithSettings:appLinkFactory:appLinkTargetFactory:appLinkEventPoster:':
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKUserAgeRange: {}
     FBSDKUtility:
         methods:
@@ -402,26 +434,13 @@ classes:
             '+startGCDTimerWithInterval:block:':
                 name: startGCDTimer
             '+unversionedFacebookURLWithHostPrefix:path:queryParameters:error:':
-                name: getUnversionedFacebookURL
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKWebDialog:
-        methods:
-            '+dialogWithName:delegate:':
-                name: create
-                constructor: true
-            '+showWithName:parameters:delegate:':
-                name: show
-            '+createAndShow:parameters:frame:delegate:windowFinder:':
-                name: createAndShow
-            '+createAndShowWithName:parameters:frame:delegate:windowFinder:':
-                name: createAndShow
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKWebViewAppLinkResolver: {}
     FBSDKSettingsLogging: {}
     FBSDKLogger:
-        methods:
-            '+singleShotLogEntry:logEntry:':
-                name: singleShotLogEntry
-            '+new':
-                exclude: true
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKError:
         methods:
             '+errorWithCode:message:':
@@ -447,21 +466,16 @@ classes:
     FBSDKGraphRequestConnectionFactory: {}
     FBSDKGraphRequestFactory: {}
     FBSDKIcon:
-        methods:
-            '-pathWithSize:':
-                name: getPath
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKInternalUtility:
-        methods:
-            '-object:isEqualToObject:':
-                name: compareUrls
-            '-extractPermissionsFromResponse:grantedPermissions:declinedPermissions:expiredPermissions:':
-                name: extractPermissions
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKShareDialogConfiguration: {}
     FBSDKWebDialogView:
         methods:
-            '+configureWithWebViewProvider:urlOpener:':
-                name: configure
-    FBSDKDynamicFrameworkLoaderProxy: {}
+            '+configureWithWebViewProvider:urlOpener:errorFactory:':
+                exclude: true #INTERNAL - DO NOT USE
+    FBSDKDynamicFrameworkLoaderProxy:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKKeychainStore:
         methods:
             '-initWithService:accessGroup:':
@@ -470,23 +484,17 @@ classes:
                 name: setData
     FBSDKKeychainStoreFactory: {}
     FBSDKLoginTooltip:
-        methods:
-            '-initWithText:enabled:':
-                name: init
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKTransformer:
-        methods:
-            '-CATransform3DMakeScale:sy:sz:':
-                name: makeScale
-            '-CATransform3DMakeTranslation:ty:tz:':
-                name: makeTranslation
-            '-CATransform3DConcat:b:':
-                name: concat
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKServerConfigurationProvider:
         methods:
             '-loadServerConfigurationWithCompletionBlock:':
                 name: loadServerConfiguration
-    FBSDKImpressionLoggingButton: {}
-    FBSDKErrorFactory: {}
+    FBSDKImpressionLoggingButton:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorFactory:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKNetworkErrorChecker: {}
     FBSDKAppEventsCAPIManager:
         methods:
@@ -498,6 +506,134 @@ classes:
                 name: configure
             '-callCapiGatewayAPIWith:':
                 name: callCapiGatewayAPI
+    FBSDKAEMNetworker:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKATEPublisherFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsConfigurationManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsDeviceInfo:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsState:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsStateFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsStateManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsUtility:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkTargetFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkURLFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAuthenticationStatusUtility:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKBackgroundEventLogger:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKBridgeAPIRequestFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKCloseIcon:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKCodelessIndexer:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKCrashObserver:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKCrashShield:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKDialogConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKDialogConfigurationMapBuilder:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorConfiguration:
+        methods:
+            '-initWithDictionary:':
+                name: init
+            '-updateWithArray:':
+                name: update
+            '-recoveryConfigurationForCode:subcode:request:':
+                exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorConfigurationProvider:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorRecoveryConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorReporter:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKFeatureExtractor:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKFeatureManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKGateKeeperManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKGraphRequestPiggybackManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKHumanSilhouetteIcon:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKImpressionLoggerFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKInstrumentManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKLoggerFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKLogo:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKMath:
+        methods:
+            '+hashWithInteger:':
+                name: hash
+            '+hashWithIntegerArray:count:':
+                name: hash
+    FBSDKMeasurementEventListener:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKMetadataIndexer:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKModelManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKPaymentObserver:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKPaymentProductRequestor:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKPaymentProductRequestorFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKProductRequestFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKRestrictiveDataFilterManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKRestrictiveEventFilter:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKSKAdNetworkEvent:
+        methods:
+            '-initWithJSON:':
+                name: init
+    FBSDKSKAdNetworkReporter:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKServerConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKServerConfigurationManager:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKSuggestedEventsIndexer:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKSwizzler:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKTimeSpentData:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKTokenCache:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKURLSessionProxyFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKUserDataStore:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKViewImpressionLogger:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKWebViewFactory:
+        methods:
+            '-createWebViewWithFrame:':
+                name: createWebView
+    ServerConfigurationProvider:
+        exclude: true #INTERNAL - DO NOT USE
+    _FBSDKAccessTokenExpirer:
+        exclude: true #INTERNAL - DO NOT USE
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -510,21 +646,11 @@ protocols:
             '-application:openURL:sourceApplication:annotation:':
                 name: openURL
     FBSDKBridgeAPIProtocol:
-        methods:
-            '-requestURLWithActionID:scheme:methodName:methodVersion:parameters:error:':
-                name: requestURL
-            '-responseParametersForActionID:queryParameters:cancelled:error:':
-                name: responseParameters
-            '-requestURLWithActionID:scheme:methodName:parameters:error:':
-                name: requestURL
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKButtonImpressionTracking: { }
     FBSDKCopying: { }
     FBSDKErrorRecoveryAttempting:
-        methods:
-            '-attemptRecoveryFromError:optionIndex:completionHandler:':
-                name: attemptRecovery
-            '-attemptRecoveryFromError:completionHandler:':
-                name: attemptRecovery
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKGraphErrorRecoveryProcessorDelegate:
         methods:
             '-processorDidAttemptRecovery:didRecover:error:':
@@ -550,55 +676,42 @@ protocols:
                 name: didSendBodyData
     FBSDKMutableCopying:
         skip_adapter: true
-    FBSDKTokenCaching: { }
+    FBSDKTokenCaching:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKURLOpening:
-        methods:
-            '-application:openURL:sourceApplication:annotation:':
-                name: openURL
-            '-canOpenURL:forApplication:sourceApplication:annotation:':
-                name: canOpenURL
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKWebDialogDelegate:
-        methods:
-            '-webDialog:didCompleteWithResults:':
-                name: didComplete
-            '-webDialog:didFailWithError:':
-                name: didFail
-    FBSDKAccessTokenProviding: { skip_adapter: true}
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAccessTokenProviding:
+        exclude: true # INTERNAL - DO NOT USE
     FBSDKAccessTokenSetting: { skip_adapter: true}
     FBSDKFeatureChecking:
-        methods:
-            '-checkFeature:completionBlock:':
-                name: checkFeature
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKSettings:
         name: FBSDKSettingsProtocol
         properties:
+            advertisingTrackingStatus:
+                exclude: true # operates with internal data type
             '+loggingBehaviors':
                 exclude: true # as deprecated
+            userAgentSuffix:
+                exclude: true #INTERNAL - DO NOT USE
         methods:
             '-setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
     FBSDKSettingsLogging: {}
-    FBSDKAppURLSchemeProviding: { skip_adapter: true}
+    FBSDKAppURLSchemeProviding:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKBridgeAPIResponseCreating: { skip_adapter: true}
     FBSDKDynamicFrameworkResolving: { skip_adapter: true}
-    FBSDKOperatingSystemVersionComparing: { skip_adapter: true}
+    FBSDKOperatingSystemVersionComparing:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKURLOpener:
-        skip_adapter: true
-        methods:
-            '-openURL:sender:handler:':
-                name: openURL
-            '-openURLWithSafariViewController:sender:fromViewController:handler:':
-                name: openURL
-
-    FBSDKAppAvailabilityChecker: {}
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppAvailabilityChecker:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKBridgeAPIRequestOpening:
-        methods:
-            '-openBridgeAPIRequest:useSafariViewController:fromViewController:completionBlock:':
-                name: openBridgeAPIRequest
-            '-openURLWithSafariViewController:sender:fromViewController:handler:':
-                name: openURL
-            '-openURL:sender:handler:':
-                name: openURL
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKInternalUtility:
         name: FBSDKInternalUtilityProtocol
         methods:
@@ -619,17 +732,13 @@ protocols:
             '-webDialogView:didFailWithError:':
                 name: didFail
     FBSDKWindowFinding: {}
-    FBSDKAuthenticationTokenProviding: {} # FIXME: contains static properties in interface that is not completely supported
+    FBSDKAuthenticationTokenProviding:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKAuthenticationTokenSetting: {}
     FBSDKBridgeAPIRequest:
-        name:
-            FBSDKBridgeAPIRequestProtocol
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKBridgeAPIRequestCreating:
-        methods:
-            '-bridgeAPIRequestWithProtocolType:scheme:methodName:methodVersion:parameters:userInfo:':
-                name: bridgeAPIRequest
-            '-bridgeAPIRequestWithProtocolType:scheme:methodName:parameters:userInfo:':
-                name: bridgeAPIRequest
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKGraphRequestConnectionFactory:
         name: FBSDKGraphRequestConnectionFactoryProtocol
     FBSDKGraphRequestFactory:
@@ -667,23 +776,22 @@ protocols:
                 name: singleShotLogEntry
     FBSDKProfileProviding: {}
     FBSDKTokenStringProviding:
-        properties:
-            '+tokenString':
-                name: providedTokenString #@warning UNSAFE - DO NOT USE
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKURLHosting:
         methods:
             '-appURLWithHost:path:queryParameters:error:':
-                name: appURL
+                exclude: true #INTERNAL - DO NOT USE
             '-facebookURLWithHostPrefix:path:queryParameters:error:':
-                name: facebookURL
+                exclude: true #INTERNAL - DO NOT USE
     FBSDKAppLinkTarget:
         name: FBSDKAppLinkTargetProtocol
         methods:
             '+appLinkTargetWithURL:appStoreId:appName:':
                 name: create
-    FBSDKButtonImpressionLogging: {}
+    FBSDKButtonImpressionLogging:
+        exclude: true #INTERNAL - DO NOT USE
     __FBSDKLoggerCreating:
-        exclude: true
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKErrorCreating:
         methods:
             '-errorWithCode:userInfo:message:underlyingError:':
@@ -701,7 +809,8 @@ protocols:
             '-unknownErrorWithMessage:userInfo:':
                 name: unknownError
     FBSDKNetworkErrorChecking: {}
-    _FBSDKWindowFinding: {}
+    _FBSDKWindowFinding:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKCAPIReporter:
         methods:
             '-configureWithFactory:settings:':
@@ -725,6 +834,138 @@ protocols:
                 name: fb_removeItem
             '-fb_contentsOfDirectoryAtPath:error:':
                 name: fb_contentsOfDirectory
+    FBSDKAEMReporter:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKATEPublisherCreating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAdvertiserIDProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventDropDetermining:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventParametersExtracting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsConfigurationProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsConfiguring:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsParameterProcessing:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsReporter:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsStatePersisting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsStateProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsUtility:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLink:
+        exclude: true # INTERNAL - DO NOT USE
+    FBSDKAppLinkCreating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkEventPosting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkResolverRequestBuilding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkTargetCreating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkURL:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppLinkURLCreating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppStoreReceiptProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKApplicationActivating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKApplicationLifecycleObserving:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKApplicationStateSetting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKBackgroundEventLogging:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKClientTokenProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKCodelessIndexing:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKConversionValueUpdating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKDecodableErrorConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKDeviceInformationProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKDialogConfigurationMapBuilding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorConfigurationProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKErrorReporting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKEventLogging:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKEventProcessing:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKEventsProcessing:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKFeatureDisabling:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKFeatureExtracting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKGateKeeperManaging:
+        methods:
+            '+boolForKey:defaultValue:':
+                name: getBool
+    FBSDKGraphRequestPiggybackManaging:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKImpressionLoggerFactory:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKImpressionLogging:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKIntegrityParametersProcessorProvider:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKIntegrityProcessing: { }
+    FBSDKInternalURLOpener:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKLoggingNotifying:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKMacCatalystDetermining:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKMetadataIndexing:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKPaymentObserving:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKPaymentProductRequestorCreating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKProductsRequest:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKProductsRequestCreating:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKRulesFromKeyProvider:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKServerConfigurationProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKSourceApplicationTracking:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKSuggestedEventsIndexer:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKSwizzling:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKTimeSpentRecording:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKURLSessionProxyProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKURLSessionProxying:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKUserDataPersisting:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKUserIDProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKWebView: { }
+    FBSDKWebViewProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    _FBSDKAccessTokenExpiring:
+        exclude: true #INTERNAL - DO NOT USE
+    _FBSDKNotificationPosting:
+        exclude: true #INTERNAL - DO NOT USE
 functions:
     fb_randomString:
         exclude: true
@@ -779,14 +1020,9 @@ values:
         name: getOverrideAppIDBundleKey
         type: NSString
     FBSDKBridgeAPI(.*)Key:
-        class: FBSDKBridgeAPI
-        static_class: Keys
-        name: 'Event#{g[0]}'
-        type: NSString
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKMeasurementEventNotification:
-        class: FBSDKMeasurementEvent
-        name: 'eventNotificationName'
-        type: NSString
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKProfileDidChangeNotification:
         class: FBSDKProfile
         name: 'didChangeNotification'
@@ -800,19 +1036,35 @@ values:
         class: FBSDKAppLink
         name: getVersion
     FBSDKDialogConfigurationName(.*):
-        class: FBSDKShareDialogConfiguration
-        static_class: DialogNames
-        name: '#{g[0]}'
+        exclude: true # INTERNAL - DO NOT USE
     FBSDKAppEventParameter(.*):
         class: FBSDKAppEvents
         static_class: Parameters
         name: '#{g[0]}'
     FBSDKCATransform3DIdentity:
-        class: FBSDKTransformer
-        name: identity
-    FBSDK_CANOPENURL_(.*):
-        class: FBSDKInternalUtility
-        name: 'canOpen#{g[0]}'
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKApplicationDidBecomeActiveNotification:
+        exclude: true
+    DefaultKeychainServicePrefix:
+        exclude: true # INTERNAL - DO NOT USE
+    FBSDKAppLink(.*)EventName:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKServerConfigurationVersion:
+        class: FBSDKServerConfiguration
+        name: getServerConfigurationVersion
+
+    FBLinkable_NSNotificationCenter_NotificationPosting:
+        exclude: true
+    FBLink_NSNotificationCenter_NotificationPosting:
+        exclude: true
+    FBLinkable_NSProcessInfo_MacCatalystDetermining:
+        exclude: true
+    FBLink_NSProcessInfo_MacCatalystDetermining:
+        exclude: true
+    FBLinkable_NSProcessInfo_OperatingSystemVersionComparing:
+        exclude: true
+    FBLink_NSProcessInfo_OperatingSystemVersionComparing:
+        exclude: true
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

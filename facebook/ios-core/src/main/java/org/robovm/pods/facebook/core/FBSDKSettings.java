@@ -33,6 +33,8 @@ import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.webkit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -130,8 +132,6 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isDataProcessingRestricted();
     @Property(selector = "isSetATETimeExceedsInstallTime")
     public native boolean isSetATETimeExceedsInstallTime();
-    @Property(selector = "advertisingTrackingStatus")
-    public native FBSDKAdvertisingTrackingStatus getAdvertisingTrackingStatus();
     @Property(selector = "installTimestamp")
     public native NSDate getInstallTimestamp();
     @Property(selector = "advertiserTrackingEnabledTimestamp")
