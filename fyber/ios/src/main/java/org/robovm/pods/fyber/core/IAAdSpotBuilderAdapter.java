@@ -53,8 +53,16 @@ import org.robovm.apple.coregraphics.*;
     public IAAdRequest getAdRequest() { return null; }
     @NotImplemented("setAdRequest:")
     public void setAdRequest(IAAdRequest v) {}
+    /**
+     * @deprecated In current version setting this property set corresponding value also for IASDKCore.sharedInstance. In the next SDK version this property will be removed. Please use 'mediationType' property of IASDKCore instance instead.
+     */
+    @Deprecated
     @NotImplemented("mediationType")
     public IAMediation getMediationType() { return null; }
+    /**
+     * @deprecated In current version setting this property set corresponding value also for IASDKCore.sharedInstance. In the next SDK version this property will be removed. Please use 'mediationType' property of IASDKCore instance instead.
+     */
+    @Deprecated
     @NotImplemented("setMediationType:")
     public void setMediationType(IAMediation v) {}
     /*</properties>*/

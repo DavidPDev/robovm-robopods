@@ -52,8 +52,16 @@ import org.robovm.apple.coregraphics.*;
     IAAdRequest getAdRequest();
     @Property(selector = "setAdRequest:")
     void setAdRequest(IAAdRequest v);
+    /**
+     * @deprecated In current version setting this property set corresponding value also for IASDKCore.sharedInstance. In the next SDK version this property will be removed. Please use 'mediationType' property of IASDKCore instance instead.
+     */
+    @Deprecated
     @Property(selector = "mediationType")
     IAMediation getMediationType();
+    /**
+     * @deprecated In current version setting this property set corresponding value also for IASDKCore.sharedInstance. In the next SDK version this property will be removed. Please use 'mediationType' property of IASDKCore instance instead.
+     */
+    @Deprecated
     @Property(selector = "setMediationType:")
     void setMediationType(IAMediation v);
     /*</properties>*/
