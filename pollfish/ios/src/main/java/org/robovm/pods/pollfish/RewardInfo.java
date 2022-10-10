@@ -48,7 +48,7 @@ import org.robovm.apple.corelocation.*;
     protected RewardInfo(Handle h, long handle) { super(h, handle); }
     protected RewardInfo(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithRewardName:rewardConversion:")
-    public RewardInfo(String rewardName, float rewardConversion) { super((SkipInit) null); initObject(init(rewardName, rewardConversion)); }
+    public RewardInfo(String rewardName, double rewardConversion) { super((SkipInit) null); initObject(init(rewardName, rewardConversion)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "description")
@@ -57,6 +57,6 @@ import org.robovm.apple.corelocation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithRewardName:rewardConversion:")
-    protected native @Pointer long init(String rewardName, float rewardConversion);
+    protected native @Pointer long init(String rewardName, double rewardConversion);
     /*</methods>*/
 }

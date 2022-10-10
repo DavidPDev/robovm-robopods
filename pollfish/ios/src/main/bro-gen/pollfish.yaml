@@ -3,7 +3,7 @@ include: [foundation, uikit, corelocation]
 clang_args: ['-x', 'objective-c']
 framework: Pollfish
 headers:
-    - pollfish.h
+    - Pollfish.h
 
 private_typedefs: {}
 

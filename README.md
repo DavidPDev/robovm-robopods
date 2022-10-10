@@ -56,7 +56,7 @@ v1.26.0 - in development
 | [Kochava](kochava/)             | 5.1.1  |
 | [Lottie](lottie/)               | 3.4.4  |
 | [OneSignal](onesignal/)         | 3.11.2 |
-| [Pollfish](pollfish/)           | 6.2.5  |
+| [Pollfish](pollfish/)           | 6.3.0  |
 | [SAMKeychain](samkeychain/)     | 1.5.3  |
 | [Singular](singular/)           | 11.0.7 |
 | [UnityAds](unityads/)           | 4.4.1  |

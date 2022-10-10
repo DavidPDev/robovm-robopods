@@ -81,6 +81,8 @@ import org.robovm.apple.corelocation.*;
     public native PollfishParams signature(String signature);
     @Method(selector = "clickId:")
     public native PollfishParams clickId(String clickId);
+    @Method(selector = "userId:")
+    public native PollfishParams userId(String userId);
     @Method(selector = "platform:")
     public native PollfishParams platform(Platform platform);
     @Method(selector = "monitorOrientationChanges:")
