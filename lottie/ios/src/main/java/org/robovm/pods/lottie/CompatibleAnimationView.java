@@ -120,6 +120,8 @@ import org.robovm.apple.coreanimation.*;
     public native void playFromFrame(@MachineSizedFloat double fromFrame, @MachineSizedFloat double toFrame, @Block VoidBooleanBlock completion);
     @Method(selector = "playFromMarker:toMarker:completion:")
     public native void playFromMarker(String fromMarker, String toMarker, @Block VoidBooleanBlock completion);
+    @Method(selector = "playWithMarker:completion:")
+    public native void play(String marker, @Block VoidBooleanBlock completion);
     @Method(selector = "stop")
     public native void stop();
     @Method(selector = "pause")
@@ -146,6 +148,8 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double progressTimeForMarker(String named);
     @Method(selector = "frameTimeForMarker:")
     public native @MachineSizedFloat double frameTimeForMarker(String named);
+    @Method(selector = "durationFrameTimeForMarker:")
+    public native @MachineSizedFloat double durationFrameTimeForMarker(String named);
     /**
      * @since Available in iOS 9.0 and later.
      */

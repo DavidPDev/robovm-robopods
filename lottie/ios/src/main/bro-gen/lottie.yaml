@@ -79,6 +79,8 @@ classes:
                 name: setColorValue
             '-getColorValueFor:atFrame:':
                 name: getColorValue
+            '-playWithMarker:completion:':
+                name: play
     CompositionLayer:
         methods:
             '-initWithLayer:':
@@ -145,6 +147,7 @@ classes:
     ShapeLayer: {}
     SolidLayer: {}
     TransformLayer: {}
+    RepeaterLayer: {}
 protocols: {}
 
 

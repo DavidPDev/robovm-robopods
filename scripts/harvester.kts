@@ -164,7 +164,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     },
     "Lottie" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("Lottie/Carthage/Build/iOS/$artifact")
+        val artifactLocation = downloadFolder.extend("Lottie/Carthage/Build/Lottie.xcframework/ios-arm64//$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "lottie/ios",
@@ -180,8 +180,8 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 0. check latest version number at https://github.com/airbnb/lottie-ios/releases
                 1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Lottie:
                   > echo 'github "airbnb/lottie-ios" "X.Y.Z"' > Cartfile
-                  > carthage update --platform ios
-                2. expected location ${downloadFolder.extend("Lottie/Carthage/Build/iOS/")}
+                  > carthage update --platform ios --use-xcframeworks
+                2. expected location ${downloadFolder.extend("Lottie/Carthage/Build/Lottie.xcframework/ios-arm64/")}
             """.trimIndent()
         )
     },
