@@ -76,6 +76,8 @@ import org.robovm.apple.coreanimation.*;
     void bannerDidDismissScreen(IMBanner banner);
     @Method(selector = "banner:rewardActionCompletedWithRewards:")
     void rewardActionCompleted(IMBanner banner, NSDictionary<?, ?> rewards);
+    @Method(selector = "bannerAdImpressed:")
+    void bannerAdImpressed(IMBanner banner);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

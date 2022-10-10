@@ -84,6 +84,8 @@ import org.robovm.apple.coreanimation.*;
     void rewardActionCompleted(IMInterstitial interstitial, NSDictionary<?, ?> rewards);
     @Method(selector = "userWillLeaveApplicationFromInterstitial:")
     void userWillLeaveApplicationFromInterstitial(IMInterstitial interstitial);
+    @Method(selector = "interstitialAdImpressed:")
+    void interstitialAdImpressed(IMInterstitial interstitial);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

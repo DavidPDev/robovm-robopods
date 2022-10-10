@@ -78,5 +78,7 @@ import org.robovm.apple.coreanimation.*;
     public void bannerDidDismissScreen(IMBanner banner) {}
     @NotImplemented("banner:rewardActionCompletedWithRewards:")
     public void rewardActionCompleted(IMBanner banner, NSDictionary<?, ?> rewards) {}
+    @NotImplemented("bannerAdImpressed:")
+    public void bannerAdImpressed(IMBanner banner) {}
     /*</methods>*/
 }
