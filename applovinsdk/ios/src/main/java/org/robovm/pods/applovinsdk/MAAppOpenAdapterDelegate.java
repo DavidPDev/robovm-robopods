@@ -37,8 +37,8 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MANativeAdDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MAAppOpenAdapterDelegate/*</name>*/ 
+    /*<implements>*/extends MAAdapterDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -49,14 +49,26 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "didLoadNativeAd:forAd:")
-    void didLoadNativeAd(MANativeAdView nativeAdView, MAAd ad);
-    @Method(selector = "didFailToLoadNativeAdForAdUnitIdentifier:withError:")
-    void didFailToLoadNativeAd(String adUnitIdentifier, MAError error);
-    @Method(selector = "didClickNativeAd:")
-    void didClickNativeAd(MAAd ad);
-    @Method(selector = "didExpireNativeAd:")
-    void didExpireNativeAd(MAAd ad);
+    @Method(selector = "didLoadAppOpenAd")
+    void didLoadAppOpenAd();
+    @Method(selector = "didLoadAppOpenAdWithExtraInfo:")
+    void didLoadAppOpenAd(NSDictionary<NSString, ?> extraInfo);
+    @Method(selector = "didFailToLoadAppOpenAdWithError:")
+    void didFailToLoadAppOpenAd(MAAdapterError adapterError);
+    @Method(selector = "didDisplayAppOpenAd")
+    void didDisplayAppOpenAd();
+    @Method(selector = "didDisplayAppOpenAdWithExtraInfo:")
+    void didDisplayAppOpenAd(NSDictionary<NSString, ?> extraInfo);
+    @Method(selector = "didClickAppOpenAd")
+    void didClickAppOpenAd();
+    @Method(selector = "didClickAppOpenAdWithExtraInfo:")
+    void didClickAppOpenAd(NSDictionary<NSString, ?> extraInfo);
+    @Method(selector = "didHideAppOpenAd")
+    void didHideAppOpenAd();
+    @Method(selector = "didHideAppOpenAdWithExtraInfo:")
+    void didHideAppOpenAd(NSDictionary<NSString, ?> extraInfo);
+    @Method(selector = "didFailToDisplayAppOpenAdWithError:")
+    void didFailToDisplayAppOpenAd(MAAdapterError adapterError);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

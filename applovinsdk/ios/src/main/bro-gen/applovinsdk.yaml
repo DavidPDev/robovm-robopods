@@ -167,6 +167,8 @@ classes:
                 name: getShared
             '+sharedWithSettings:':
                 name: getShared
+            '-showMediationDebuggerWithAmazonAdSize:':
+                name: showMediationDebugger
     ALSdkConfiguration: {}
     ALSdkSettings:
         methods:
@@ -323,6 +325,8 @@ classes:
                 name: didRewardUserForPlacementIdentifier
             '-log:becauseOf:':
                 name: log
+            '-addAppOpenAdapter:delegate:forPlacementIdentifier:':
+                name: addAppOpenAdapter
     ALTargetingData: {}
     ALUtils: {}
     MAAdapterError:
@@ -407,6 +411,22 @@ classes:
                 constructor: true
                 name: create
     MATableViewAdPlacerCell: {}
+    MAAppOpenAd:
+        methods:
+            '-initWithAdUnitIdentifier:':
+                name: initWithAdUnitIdentifier$
+            '-initWithAdUnitIdentifier:sdk:':
+                #trim_after_first_colon: true
+                name: initWithAdUnitIdentifier$sdk$
+            '-showAdForPlacement:customData:':
+                #trim_after_first_colon: true
+                name: showAdForPlacement$customData$
+            '-setExtraParameterForKey:value:':
+                #trim_after_first_colon: true
+                name: setExtraParameterForKey$value$
+            '-setLocalExtraParameterForKey:value:':
+                #trim_after_first_colon: true
+                name: setLocalExtraParameterForKey$value$
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -619,6 +639,27 @@ protocols:
         methods:
             '-didGenerateCreativeIdentifier:forAd:':
                 name: didGenerateCreativeIdentifier
+    MAAdRequestDelegate: { }
+    MAAppOpenAdapter:
+        methods:
+            '-loadAppOpenAdForParameters:andNotify:':
+                name: loadAppOpenAd
+            '-showAppOpenAdForParameters:andNotify:':
+                name: showAppOpenAd
+    MAAppOpenAdapterDelegate:
+        methods:
+            '-didLoadAppOpenAdWithExtraInfo:':
+                name: didLoadAppOpenAd
+            '-didFailToLoadAppOpenAdWithError:':
+                name: didFailToLoadAppOpenAd
+            '-didDisplayAppOpenAdWithExtraInfo:':
+                name: didDisplayAppOpenAd
+            '-didClickAppOpenAdWithExtraInfo:':
+                name: didClickAppOpenAd
+            '-didHideAppOpenAdWithExtraInfo:':
+                name: didHideAppOpenAd
+            '-didFailToDisplayAppOpenAdWithError:':
+                name: didFailToDisplayAppOpenAd
 functions:
 
     # Make sure we don't miss any functions if new ones are introduced in a later version

@@ -37,23 +37,27 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MARewardedAd/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAAppOpenAd/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class MARewardedAdPtr extends Ptr<MARewardedAd, MARewardedAdPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(MARewardedAd.class); }/*</bind>*/
+    /*<ptr>*/public static class MAAppOpenAdPtr extends Ptr<MAAppOpenAd, MAAppOpenAdPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(MAAppOpenAd.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected MARewardedAd() {}
-    protected MARewardedAd(Handle h, long handle) { super(h, handle); }
-    protected MARewardedAd(SkipInit skipInit) { super(skipInit); }
+    protected MAAppOpenAd() {}
+    protected MAAppOpenAd(Handle h, long handle) { super(h, handle); }
+    protected MAAppOpenAd(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithAdUnitIdentifier:")
+    public MAAppOpenAd(String adUnitIdentifier) { super((SkipInit) null); initObject(initWithAdUnitIdentifier$(adUnitIdentifier)); }
+    @Method(selector = "initWithAdUnitIdentifier:sdk:")
+    public MAAppOpenAd(String adUnitIdentifier, ALSdk sdk) { super((SkipInit) null); initObject(initWithAdUnitIdentifier$sdk$(adUnitIdentifier, sdk)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "delegate")
-    public native MARewardedAdDelegate getDelegate();
+    public native MAAdDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
-    public native void setDelegate(MARewardedAdDelegate v);
+    public native void setDelegate(MAAdDelegate v);
     @Property(selector = "revenueDelegate")
     public native MAAdRevenueDelegate getRevenueDelegate();
     @Property(selector = "setRevenueDelegate:", strongRef = true)
@@ -62,10 +66,6 @@ import org.robovm.apple.coreanimation.*;
     public native MAAdRequestDelegate getRequestDelegate();
     @Property(selector = "setRequestDelegate:", strongRef = true)
     public native void setRequestDelegate(MAAdRequestDelegate v);
-    @Property(selector = "adReviewDelegate")
-    public native MAAdReviewDelegate getAdReviewDelegate();
-    @Property(selector = "setAdReviewDelegate:", strongRef = true)
-    public native void setAdReviewDelegate(MAAdReviewDelegate v);
     @Property(selector = "adUnitIdentifier")
     public native String getAdUnitIdentifier();
     @Property(selector = "isReady")
@@ -73,6 +73,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithAdUnitIdentifier:")
+    protected native @Pointer long initWithAdUnitIdentifier$(String adUnitIdentifier);
+    @Method(selector = "initWithAdUnitIdentifier:sdk:")
+    protected native @Pointer long initWithAdUnitIdentifier$sdk$(String adUnitIdentifier, ALSdk sdk);
     @Method(selector = "loadAd")
     public native void loadAd();
     @Method(selector = "showAd")
@@ -80,16 +84,10 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "showAdForPlacement:")
     public native void showAdForPlacement(String placement);
     @Method(selector = "showAdForPlacement:customData:")
-    public native void showAdForPlacement(String placement, String customData);
-    @Method(selector = "showAdForPlacement:customData:viewController:")
-    public native void showAdForPlacement(String placement, String customData, UIViewController viewController);
+    public native void showAdForPlacement$customData$(String placement, String customData);
     @Method(selector = "setExtraParameterForKey:value:")
-    public native void setExtraParameter(String key, String value);
+    public native void setExtraParameterForKey$value$(String key, String value);
     @Method(selector = "setLocalExtraParameterForKey:value:")
-    public native void setLocalExtraParameter(String key, NSObject value);
-    @Method(selector = "sharedWithAdUnitIdentifier:")
-    public static native MARewardedAd getShared(String adUnitIdentifier);
-    @Method(selector = "sharedWithAdUnitIdentifier:sdk:")
-    public static native MARewardedAd getShared(String adUnitIdentifier, ALSdk sdk);
+    public native void setLocalExtraParameterForKey$value$(String key, NSObject value);
     /*</methods>*/
 }

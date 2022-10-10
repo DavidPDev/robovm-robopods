@@ -52,15 +52,15 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "consentFlowSettings")
     public native ALConsentFlowSettings getConsentFlowSettings();
-    @Property(selector = "isVerboseLogging")
-    public native boolean isVerboseLogging();
-    @Property(selector = "setIsVerboseLogging:")
-    public native void setIsVerboseLogging(boolean v);
-    @Property(selector = "muted")
+    @Property(selector = "isVerboseLoggingEnabled")
+    public native boolean isVerboseLoggingEnabled();
+    @Property(selector = "setVerboseLoggingEnabled:")
+    public native void setVerboseLoggingEnabled(boolean v);
+    @Property(selector = "isMuted")
     public native boolean isMuted();
     @Property(selector = "setMuted:")
     public native void setMuted(boolean v);
-    @Property(selector = "creativeDebuggerEnabled")
+    @Property(selector = "isCreativeDebuggerEnabled")
     public native boolean isCreativeDebuggerEnabled();
     @Property(selector = "setCreativeDebuggerEnabled:")
     public native void setCreativeDebuggerEnabled(boolean v);
@@ -84,6 +84,18 @@ import org.robovm.apple.coreanimation.*;
     public native NSDictionary<NSString, NSString> getExtraParameters();
     @Property(selector = "setExtraParameters:")
     public native void setExtraParameters(NSDictionary<NSString, NSString> v);
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use `-[ALSdkSettings isVerboseLoggingEnabled]` instead.
+     */
+    @Deprecated
+    @Property(selector = "isVerboseLogging")
+    public native boolean isVerboseLogging();
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use `-[ALSdkSettings isVerboseLoggingEnabled]` instead.
+     */
+    @Deprecated
+    @Property(selector = "setIsVerboseLogging:")
+    public native void setIsVerboseLogging(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -60,6 +60,8 @@ import org.robovm.apple.coreanimation.*;
     public static native MAAdFormat getCrossPromo();
     @Property(selector = "interstitial")
     public static native MAAdFormat getInterstitial();
+    @Property(selector = "appOpen")
+    public static native MAAdFormat getAppOpen();
     @Property(selector = "rewarded")
     public static native MAAdFormat getRewarded();
     @Property(selector = "rewardedInterstitial")

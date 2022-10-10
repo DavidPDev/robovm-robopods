@@ -1,9 +1,8 @@
 //
-//  MAInterstitialAdapterDelegate.h
+//  MAAppOpenAdapterDelegate.h
 //  AppLovinSDK
 //
-//  Created by Thomas So on 8/10/18.
-//  Copyright © 2019 AppLovin Corporation. All rights reserved.
+//  Created by Andrew Tian on 7/26/22.
 //
 
 #import <AppLovinSDK/MAAdapterDelegate.h>
@@ -12,67 +11,71 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Protocol for adapters to forward ad load and display events to the MAX SDK for interstitial ads.
+ * Protocol for adapters to forward ad load and display events to the MAX SDK for app open ads.
  */
-@protocol MAInterstitialAdapterDelegate<MAAdapterDelegate>
+@protocol MAAppOpenAdapterDelegate<MAAdapterDelegate>
 
 /**
  * This method should called when an ad has been loaded.
  */
-- (void)didLoadInterstitialAd;
+- (void)didLoadAppOpenAd;
 
 /**
  * This method should called when an ad has been loaded.
  *
  * @param extraInfo Extra info passed from the adapter.
  */
-- (void)didLoadInterstitialAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
+- (void)didLoadAppOpenAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
 
 /**
  * This method should be called when an ad could not be loaded.
  *
  * @param adapterError An error object that indicates the cause of ad failure.
  */
-- (void)didFailToLoadInterstitialAdWithError:(MAAdapterError *)adapterError;
+- (void)didFailToLoadAppOpenAdWithError:(MAAdapterError *)adapterError;
 
 /**
  * This method should be called when the adapter has successfully displayed an ad to the user.
  */
-- (void)didDisplayInterstitialAd;
+- (void)didDisplayAppOpenAd;
 
 /**
  * This method should be called when the adapter has successfully displayed an ad to the user.
  *
  * @param extraInfo Extra info passed from the adapter.
  */
-- (void)didDisplayInterstitialAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
+- (void)didDisplayAppOpenAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
 
 /**
  * This method should be called when the user has clicked adapter's ad.
  */
-- (void)didClickInterstitialAd;
+- (void)didClickAppOpenAd;
 
 /**
  * This method should be called when the user has clicked adapter's ad.
+ *
+ * @param extraInfo Extra info passed from the adapter.
  */
-- (void)didClickInterstitialAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
+- (void)didClickAppOpenAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
 
 /**
  * This method should be called when adapter's ad has been dismissed.
  */
-- (void)didHideInterstitialAd;
+- (void)didHideAppOpenAd;
 
 /**
  * This method should be called when adapter's ad has been dismissed.
+ *
+ * @param extraInfo Extra info passed from the adapter.
  */
-- (void)didHideInterstitialAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
+- (void)didHideAppOpenAdWithExtraInfo:(nullable NSDictionary<NSString *, id> *)extraInfo;
 
 /**
  * This method is should be called when an ad could not be displayed.
  *
  * @param adapterError An error object that indicates the cause of the failure.
  */
-- (void)didFailToDisplayInterstitialAdWithError:(MAAdapterError *)adapterError;
+- (void)didFailToDisplayAppOpenAdWithError:(MAAdapterError *)adapterError;
 
 @end
 

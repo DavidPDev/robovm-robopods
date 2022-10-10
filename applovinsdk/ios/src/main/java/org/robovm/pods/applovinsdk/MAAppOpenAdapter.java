@@ -36,31 +36,24 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALCMessage/*</name>*/ 
-    extends /*<extends>*/NSNotification/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MAAppOpenAdapter/*</name>*/ 
+    /*<implements>*/extends MAAdapter/*</implements>*/ {
 
-    /*<ptr>*/public static class ALCMessagePtr extends Ptr<ALCMessage, ALCMessagePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ALCMessage.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected ALCMessage(Handle h, long handle) { super(h, handle); }
-    protected ALCMessage(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithData:topic:fromPublisher:")
-    public ALCMessage(NSDictionary<NSString, ?> data, String topic, ALCPublisher publisher) { super((SkipInit) null); initObject(init(data, topic, publisher)); }
-    /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "data")
-    public native NSDictionary<NSString, ?> getData();
-    @Property(selector = "topic")
-    public native String getTopic();
-    @Property(selector = "publisherIdentifier")
-    public native String getPublisherIdentifier();
+    
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithData:topic:fromPublisher:")
-    protected native @Pointer long init(NSDictionary<NSString, ?> data, String topic, ALCPublisher publisher);
+    @Method(selector = "loadAppOpenAdForParameters:andNotify:")
+    void loadAppOpenAd(MAAdapterResponseParameters parameters, MAAppOpenAdapterDelegate delegate);
+    @Method(selector = "showAppOpenAdForParameters:andNotify:")
+    void showAppOpenAd(MAAdapterResponseParameters parameters, MAAppOpenAdapterDelegate delegate);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

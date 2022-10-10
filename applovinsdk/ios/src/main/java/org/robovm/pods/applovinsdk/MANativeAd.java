@@ -74,6 +74,8 @@ import org.robovm.apple.coreanimation.*;
     public native MANativeAdImage getMainImage();
     @Property(selector = "mediaContentAspectRatio")
     public native @MachineSizedFloat double getMediaContentAspectRatio();
+    @Property(selector = "isExpired")
+    public native boolean isExpired();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

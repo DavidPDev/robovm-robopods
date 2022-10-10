@@ -89,6 +89,8 @@ import org.robovm.apple.coreanimation.*;
     public native void setPluginVersion(String pluginVersion);
     @Method(selector = "showMediationDebugger")
     public native void showMediationDebugger();
+    @Method(selector = "showMediationDebuggerWithAmazonAdSize:")
+    public native void showMediationDebugger(NSDictionary<NSString, NSArray> amazonAdSizes);
     @Method(selector = "initializeSdk")
     public native void initializeSdk();
     @Method(selector = "initializeSdkWithCompletionHandler:")

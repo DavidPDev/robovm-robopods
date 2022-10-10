@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (ALSdk)
 @property (nonatomic, assign, readonly, getter=al_isValidString) BOOL al_validString;
-@property (readonly, assign, getter=al_isValidURL) BOOL al_validURL;
+@property (nonatomic, assign, readonly, getter=al_isValidURL) BOOL al_validURL;
 - (BOOL)al_isEqualToStringIgnoringCase:(NSString *)otherString;
 @end
 
@@ -68,6 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (ALSdk)
 + (NSTimeInterval)al_timeIntervalNow;
+@end
+
+@interface UIImageView (ALUtils)
+- (void)al_setImageWithURL:(NSURL *)URL;
 @end
 
 NS_ASSUME_NONNULL_END

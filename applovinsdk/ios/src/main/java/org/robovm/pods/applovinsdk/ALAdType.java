@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "regular")
     public static native ALAdType getRegular();
+    @Property(selector = "appOpen")
+    public static native ALAdType getAppOpen();
     @Property(selector = "incentivized")
     public static native ALAdType getIncentivized();
     @Property(selector = "autoIncentivized")

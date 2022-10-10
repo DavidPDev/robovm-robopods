@@ -59,6 +59,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "addInterstitialAdapter:delegate:forPlacementIdentifier:")
     public native void addInterstitialAdapter(MAAdapter adapter, MAInterstitialAdapterDelegate delegate, String placementIdentifier);
+    @Method(selector = "addAppOpenAdapter:delegate:forPlacementIdentifier:")
+    public native void addAppOpenAdapter(MAAdapter adapter, MAAppOpenAdapterDelegate delegate, String placementIdentifier);
     @Method(selector = "addRewardedAdapter:delegate:forPlacementIdentifier:")
     public native void addRewardedAdapter(MAAdapter adapter, MARewardedAdapterDelegate delegate, String placementIdentifier);
     @Method(selector = "addAdViewAdapter:delegate:forPlacementIdentifier:adView:")

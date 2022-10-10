@@ -36,9 +36,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MANativeAdDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements MANativeAdDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAAppOpenAdapterDelegateAdapter/*</name>*/ 
+    extends /*<extends>*/MAAdapterDelegateAdapter/*</extends>*/ 
+    /*<implements>*/implements MAAppOpenAdapterDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -51,13 +51,25 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("didLoadNativeAd:forAd:")
-    public void didLoadNativeAd(MANativeAdView nativeAdView, MAAd ad) {}
-    @NotImplemented("didFailToLoadNativeAdForAdUnitIdentifier:withError:")
-    public void didFailToLoadNativeAd(String adUnitIdentifier, MAError error) {}
-    @NotImplemented("didClickNativeAd:")
-    public void didClickNativeAd(MAAd ad) {}
-    @NotImplemented("didExpireNativeAd:")
-    public void didExpireNativeAd(MAAd ad) {}
+    @NotImplemented("didLoadAppOpenAd")
+    public void didLoadAppOpenAd() {}
+    @NotImplemented("didLoadAppOpenAdWithExtraInfo:")
+    public void didLoadAppOpenAd(NSDictionary<NSString, ?> extraInfo) {}
+    @NotImplemented("didFailToLoadAppOpenAdWithError:")
+    public void didFailToLoadAppOpenAd(MAAdapterError adapterError) {}
+    @NotImplemented("didDisplayAppOpenAd")
+    public void didDisplayAppOpenAd() {}
+    @NotImplemented("didDisplayAppOpenAdWithExtraInfo:")
+    public void didDisplayAppOpenAd(NSDictionary<NSString, ?> extraInfo) {}
+    @NotImplemented("didClickAppOpenAd")
+    public void didClickAppOpenAd() {}
+    @NotImplemented("didClickAppOpenAdWithExtraInfo:")
+    public void didClickAppOpenAd(NSDictionary<NSString, ?> extraInfo) {}
+    @NotImplemented("didHideAppOpenAd")
+    public void didHideAppOpenAd() {}
+    @NotImplemented("didHideAppOpenAdWithExtraInfo:")
+    public void didHideAppOpenAd(NSDictionary<NSString, ?> extraInfo) {}
+    @NotImplemented("didFailToDisplayAppOpenAdWithError:")
+    public void didFailToDisplayAppOpenAd(MAAdapterError adapterError) {}
     /*</methods>*/
 }
