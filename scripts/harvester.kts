@@ -99,7 +99,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     },
     "Charts" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("Charts/Carthage/Build/iOS/$artifact")
+        val artifactLocation = downloadFolder.extend("Charts/Carthage/Build/Charts.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "charts/ios",
@@ -108,7 +108,8 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             version = {
                 downloadFolder.extend("Charts/Cartfile").readLines()
                     .find { it.startsWith("github") }
-                    ?.let { it.substringAfterLast("==").trim() }
+                    ?.substringAfterLast("\"danielgindi/Charts\"")
+                    ?.replace("v", "")?.replace("\"", "")?.trim()
                     ?: error("Failed to find out Charts version!")
             },
             headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
@@ -119,8 +120,9 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             instruction = """
                 0. check latest version number at https://github.com/danielgindi/Charts/releases
                 1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Charts:
-                  > echo 'github "danielgindi/Charts" == "X.Y.Z"' > Cartfile
-                  > carthage update --platform ios
+                  > echo 'github "danielgindi/Charts" "X.Y.Z"' > Cartfile
+                  > carthage update --platform ios  --use-xcframeworks
+                2. expected location ${downloadFolder.extend("Charts/Carthage/Build/Charts.xcframework/ios-arm64/")} 
             """.trimIndent()
         )
     },
