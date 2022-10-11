@@ -50,6 +50,8 @@ import org.robovm.apple.dispatch.*;
     /*<properties>*/
     @Property(selector = "firestore")
     public native FIRFirestore getFirestore();
+    @Property(selector = "count")
+    public native FIRAggregateQuery getCount();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

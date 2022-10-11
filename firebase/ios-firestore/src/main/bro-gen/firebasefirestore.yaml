@@ -17,7 +17,7 @@ enums:
     FIRServerTimestampBehavior: {}
     FIRFirestoreErrorCode: { nserror: true}
     FIRLoadBundleTaskState: {}
-
+    FIRAggregateSource: {}
 classes:
     FIRCollectionReference:
         methods:
@@ -207,7 +207,11 @@ classes:
                 name: removeObserver
     FIRLoadBundleTaskProgress: {}
     FIRTransactionOptions: {}
-
+    FIRAggregateQuery:
+        methods:
+            '-aggregationWithSource:completion:':
+                name: aggregation
+    FIRAggregateQuerySnapshot: { }
 protocols:
     FIRListenerRegistration: {}
 

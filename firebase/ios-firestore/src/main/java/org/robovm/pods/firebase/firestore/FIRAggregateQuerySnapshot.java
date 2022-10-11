@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.firebase.dynamiclinks;
+package org.robovm.pods.firebase.firestore;
 
 /*<imports>*/
 import java.io.*;
@@ -28,33 +28,30 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRDynamicLink/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRAggregateQuerySnapshot/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FIRDynamicLinkPtr extends Ptr<FIRDynamicLink, FIRDynamicLinkPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRDynamicLink.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRAggregateQuerySnapshotPtr extends Ptr<FIRAggregateQuerySnapshot, FIRAggregateQuerySnapshotPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRAggregateQuerySnapshot.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FIRDynamicLink() {}
-    protected FIRDynamicLink(Handle h, long handle) { super(h, handle); }
-    protected FIRDynamicLink(SkipInit skipInit) { super(skipInit); }
+    protected FIRAggregateQuerySnapshot() {}
+    protected FIRAggregateQuerySnapshot(Handle h, long handle) { super(h, handle); }
+    protected FIRAggregateQuerySnapshot(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "url")
-    public native NSURL getUrl();
-    @Property(selector = "matchType")
-    public native FIRDLMatchType getMatchType();
-    @Property(selector = "utmParametersDictionary")
-    public native NSDictionary<NSString, ?> getUtmParametersDictionary();
-    @Property(selector = "minimumAppVersion")
-    public native String getMinimumAppVersion();
+    @Property(selector = "query")
+    public native FIRAggregateQuery getQuery();
+    @Property(selector = "count")
+    public native NSNumber getCount();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

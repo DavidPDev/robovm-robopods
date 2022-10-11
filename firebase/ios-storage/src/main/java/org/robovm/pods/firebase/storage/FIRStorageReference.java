@@ -101,8 +101,8 @@ import org.robovm.apple.dispatch.*;
     public native void updateMetadata(FIRStorageMetadata metadata, @Block VoidBlock2<FIRStorageMetadata, NSError> completion);
     @Method(selector = "deleteWithCompletion:")
     public native void deleteWithCompletion$(@Block VoidBlock1<NSError> completion);
-    @Method(selector = "copy:")
-    public native FIRStorageReference copy(NSZone zone);
+    @Method(selector = "copy")
+    public native NSObject copy();
     @Method(selector = "isEqual:")
     public native boolean isEqual(NSObject object);
     /*</methods>*/

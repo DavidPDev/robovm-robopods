@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.firebase.dynamiclinks;
+package org.robovm.pods.firebase.firestore;
 
 /*<imports>*/
 import java.io.*;
@@ -28,36 +28,32 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRDynamicLink/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRAggregateQuery/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FIRDynamicLinkPtr extends Ptr<FIRDynamicLink, FIRDynamicLinkPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRDynamicLink.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRAggregateQueryPtr extends Ptr<FIRAggregateQuery, FIRAggregateQueryPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRAggregateQuery.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FIRDynamicLink() {}
-    protected FIRDynamicLink(Handle h, long handle) { super(h, handle); }
-    protected FIRDynamicLink(SkipInit skipInit) { super(skipInit); }
+    protected FIRAggregateQuery() {}
+    protected FIRAggregateQuery(Handle h, long handle) { super(h, handle); }
+    protected FIRAggregateQuery(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "url")
-    public native NSURL getUrl();
-    @Property(selector = "matchType")
-    public native FIRDLMatchType getMatchType();
-    @Property(selector = "utmParametersDictionary")
-    public native NSDictionary<NSString, ?> getUtmParametersDictionary();
-    @Property(selector = "minimumAppVersion")
-    public native String getMinimumAppVersion();
+    @Property(selector = "query")
+    public native FIRQuery getQuery();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "aggregationWithSource:completion:")
+    public native void aggregation(FIRAggregateSource source, @Block VoidBlock2<FIRAggregateQuerySnapshot, NSError> completion);
     /*</methods>*/
 }

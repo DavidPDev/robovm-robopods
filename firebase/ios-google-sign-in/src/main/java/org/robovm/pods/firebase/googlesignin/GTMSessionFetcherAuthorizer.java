@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.firebase.dynamiclinks;
+package org.robovm.pods.firebase.googlesignin;
 
 /*<imports>*/
 import java.io.*;
@@ -28,36 +28,33 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
+import org.robovm.apple.uikit.*;
+import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.dispatch.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRDynamicLink/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/GTMSessionFetcherAuthorizer/*</name>*/ 
+    /*<implements>*/extends GTMFetcherAuthorizationProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class FIRDynamicLinkPtr extends Ptr<FIRDynamicLink, FIRDynamicLinkPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRDynamicLink.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected FIRDynamicLink() {}
-    protected FIRDynamicLink(Handle h, long handle) { super(h, handle); }
-    protected FIRDynamicLink(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "url")
-    public native NSURL getUrl();
-    @Property(selector = "matchType")
-    public native FIRDLMatchType getMatchType();
-    @Property(selector = "utmParametersDictionary")
-    public native NSDictionary<NSString, ?> getUtmParametersDictionary();
-    @Property(selector = "minimumAppVersion")
-    public native String getMinimumAppVersion();
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
     
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "authorizeRequest:completionHandler:")
+    void authorizeRequest(NSMutableURLRequest request, @Block VoidBlock1<NSError> handler);
+    @Method(selector = "authorizeRequest:delegate:didFinishSelector:")
+    void authorizeRequest(NSMutableURLRequest request, NSObject delegate, Selector sel);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

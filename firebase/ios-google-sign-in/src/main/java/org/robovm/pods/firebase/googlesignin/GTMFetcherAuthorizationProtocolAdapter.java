@@ -63,6 +63,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated implement authorizeRequest:completionHandler: instead
+     */
+    @Deprecated
     @NotImplemented("authorizeRequest:delegate:didFinishSelector:")
     public void authorizeRequest(NSMutableURLRequest request, NSObject delegate, Selector sel) {}
     @NotImplemented("stopAuthorization")

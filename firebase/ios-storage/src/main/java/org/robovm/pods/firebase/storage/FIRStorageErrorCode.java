@@ -35,7 +35,7 @@ import org.robovm.apple.dispatch.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements ValuedEnum {
+public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements NSErrorCode {
     /*<values>*/
     Unknown(-13000L),
     ObjectNotFound(-13010L),
@@ -53,9 +53,16 @@ public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements ValuedEnum {
 
     /*<bind>*/
     /*</bind>*/
-    /*<constants>*//*</constants>*/
+    /*<constants>*/
+    public static final String ErrorClassDomain = "FirebaseStorage.StorageErrorCode";
+    /*</constants>*/
+    /*<members>*//*</members>*/
     /*<methods>*//*</methods>*/
 
+    // dkimitsa: maualy added code
+    private static String getClassDomain() {
+        return ErrorClassDomain;
+    }
     private final long n;
 
     private /*<name>*/FIRStorageErrorCode/*</name>*/(long n) { this.n = n; }
@@ -66,7 +73,27 @@ public enum /*<name>*/FIRStorageErrorCode/*</name>*/ implements ValuedEnum {
                 return v;
             }
         }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+        throw new IllegalArgumentException("No constant with value " + n + " found in "
             + /*<name>*/FIRStorageErrorCode/*</name>*/.class.getName());
+    }
+
+    // bind wrap to include it in compilation as long as nserror enum is used 
+    static { Bro.bind(NSErrorWrap.class); }
+    @StronglyLinked
+    public static class NSErrorWrap extends NSError {
+        protected NSErrorWrap(SkipInit skipInit) {super(skipInit);}
+
+        @Override public NSErrorCode getErrorCode() {
+             try {
+                 return  /*<name>*/FIRStorageErrorCode/*</name>*/.valueOf(getCode());
+             } catch (IllegalArgumentException e) {
+                 return null;
+             }
+         }
+
+        public static String getClassDomain() {
+            /** must be inserted in value section */
+            return /*<name>*/FIRStorageErrorCode/*</name>*/.getClassDomain();
+        }
     }
 }

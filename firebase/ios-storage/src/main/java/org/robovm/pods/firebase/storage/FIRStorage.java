@@ -70,8 +70,6 @@ import org.robovm.apple.dispatch.*;
     public native void setCallbackQueue(DispatchQueue v);
     @Property(selector = "hash")
     public native @MachineSizedUInt long getHash();
-    @Property(selector = "description")
-    public native String getDescription();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

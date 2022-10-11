@@ -120,6 +120,12 @@ protocols:
                 name: fetcherWillStart
             '-fetcherDidFinish:withData:error:completionHandler:':
                 name: fetcherDidFinish
+    GTMSessionFetcherAuthorizer:
+        methods:
+            '-authorizeRequest:completionHandler:':
+                name: authorizeRequest
+            '-authorizeRequest:delegate:didFinishSelector:':
+                name: authorizeRequest
 functions:
 
 

@@ -35,9 +35,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated implement GTMSessionFetcherAuthorizer instead
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/GTMFetcherAuthorizationProtocol/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -61,6 +63,10 @@ import org.robovm.apple.coreanimation.*;
     void setFetcherService(GTMSessionFetcherServiceProtocol v);
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated implement authorizeRequest:completionHandler: instead
+     */
+    @Deprecated
     @Method(selector = "authorizeRequest:delegate:didFinishSelector:")
     void authorizeRequest(NSMutableURLRequest request, NSObject delegate, Selector sel);
     @Method(selector = "stopAuthorization")

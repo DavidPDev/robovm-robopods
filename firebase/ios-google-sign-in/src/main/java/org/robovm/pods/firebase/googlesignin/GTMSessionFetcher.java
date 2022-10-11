@@ -393,12 +393,6 @@ import org.robovm.apple.coreanimation.*;
     public static native void setLoggingEnabled(boolean flag);
     @Method(selector = "isLoggingEnabled")
     public static native boolean isLoggingEnabled();
-    /**
-     * @deprecated Create an NSHTTPCookieStorage and set .cookieStorage directly.
-     */
-    @Deprecated
-    @Method(selector = "setCookieStorageMethod:")
-    public native void setCookieStorageMethod(@MachineSizedSInt long method);
     @Method(selector = "URLSession:didBecomeInvalidWithError:")
     public native void didBecomeInvalid(NSURLSession session, NSError error);
     @Method(selector = "URLSession:didReceiveChallenge:completionHandler:")

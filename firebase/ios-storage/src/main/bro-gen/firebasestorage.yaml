@@ -13,7 +13,7 @@ typedefs: {}
 
 enums:
     FIRStorageTaskStatus: {}
-    FIRStorageErrorCode: {}
+    FIRStorageErrorCode: { nserror: true}
 
 classes:
     FIRStorage:
@@ -82,9 +82,6 @@ functions:
         name: 'Function_#{g[0]}'
 
 values:
-    FIRStorageErrorDomain:
-        class: FIRStorageErrorCode
-        name: getClassDomain
     FirebaseStorageVersionString:
         class: FIRStorage
         name: VersionString
@@ -99,6 +96,10 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    FIRStorageErrorCodeDomain:
+        class: FIRStorageErrorCode
+        name: ErrorClassDomain
+
     SWIFT_.*:
         exclude: true
     # Make sure we don't miss any constants if new ones are introduced in a later version

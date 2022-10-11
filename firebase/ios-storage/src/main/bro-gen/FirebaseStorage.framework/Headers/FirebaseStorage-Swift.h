@@ -280,8 +280,8 @@ SWIFT_CLASS_NAMED("Storage")
 /// returns:
 /// An instance of <code>StorageReference</code> referencing the root of the storage bucket.
 - (FIRStorageReference * _Nonnull)reference SWIFT_WARN_UNUSED_RESULT;
-/// Creates a StorageReference given a <code>gs://</code> or <code>https://</code> URL pointing to a Firebase Storage
-/// location. For example, you can pass in an <code>https://</code> download URL retrieved from
+/// Creates a StorageReference given a <code>gs://</code>, <code>http://</code>, or <code>https://</code> URL pointing to a
+/// Firebase Storage location. For example, you can pass in an <code>https://</code> download URL retrieved from
 /// <code>StorageReference.downloadURL(completion:)</code> or the <code>gs://</code> URL from
 /// <code>StorageReference.description</code>.
 /// \param url A gs // or https:// URL to initialize the reference with.
@@ -308,7 +308,6 @@ SWIFT_CLASS_NAMED("Storage")
 - (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) NSUInteger hash;
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -399,6 +398,10 @@ SWIFT_CLASS_NAMED("StorageDownloadTask")
 - (void)resume;
 @end
 
+/// Adds wrappers for common Firebase Storage errors (including creating errors from GCS errors).
+/// For more information on unwrapping GCS errors, see the GCS errors docs:
+/// https://cloud.google.com/storage/docs/json_api/v1/status-codes
+/// This is never publicly exposed to end developers (as they will simply see an NSError).
 typedef SWIFT_ENUM_NAMED(NSInteger, FIRStorageErrorCode, "StorageErrorCode", open) {
   FIRStorageErrorCodeUnknown = -13000,
   FIRStorageErrorCodeObjectNotFound = -13010,
@@ -413,6 +416,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, FIRStorageErrorCode, "StorageErrorCode", ope
   FIRStorageErrorCodeCancelled = -13040,
   FIRStorageErrorCodeInvalidArgument = -13050,
 };
+static NSString * _Nonnull const FIRStorageErrorCodeDomain = @"FirebaseStorage.StorageErrorCode";
 
 
 /// Contains the prefixes and items returned by a <code>StorageReference.list()</code> call.
@@ -480,11 +484,11 @@ SWIFT_CLASS_NAMED("StorageMetadata")
 @property (nonatomic, readonly, copy) NSDate * _Nullable timeCreated;
 /// The modification time of the object metadata in RFC 3339 format.
 @property (nonatomic, readonly, copy) NSDate * _Nullable updated;
-/// A reference to the object in Firebase Storage.
-@property (nonatomic, readonly, strong) FIRStorageReference * _Nullable storageReference;
+/// Never used API
+@property (nonatomic, readonly, strong) FIRStorageReference * _Nullable storageReference SWIFT_DEPRECATED;
 /// Creates a Dictionary from the contents of the metadata.
 /// @return A Dictionary that represents the contents of the metadata.
-- (NSDictionary<NSString *, id> * _Nonnull)dictionaryRepresentation SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, NSObject *> * _Nonnull)dictionaryRepresentation SWIFT_WARN_UNUSED_RESULT;
 /// Determines if the current metadata represents a “file”.
 @property (nonatomic, readonly) BOOL isFile;
 /// Determines if the current metadata represents a “folder”.
@@ -492,7 +496,7 @@ SWIFT_CLASS_NAMED("StorageMetadata")
 - (nonnull instancetype)init;
 /// Creates an instance of StorageMetadata from the contents of a dictionary.
 /// @return An instance of StorageMetadata that represents the contents of a dictionary.
-- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary;
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, NSObject *> * _Nonnull)dictionary OBJC_DESIGNATED_INITIALIZER;
 - (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) NSUInteger hash;
@@ -584,6 +588,7 @@ SWIFT_CLASS_NAMED("StorageReference")
 /// An instance of <code>StorageUploadTask</code>, which can be used to monitor or manage the upload.
 - (FIRStorageUploadTask * _Nonnull)putData:(NSData * _Nonnull)uploadData metadata:(FIRStorageMetadata * _Nullable)metadata completion:(void (^ _Nullable)(FIRStorageMetadata * _Nullable, NSError * _Nullable))completion;
 /// Asynchronously uploads a file to the currently specified <code>StorageReference</code>.
+/// <code>putData</code> should be used instead of <code>putFile</code> in Extensions.
 /// \param fileURL A URL representing the system file path of the object to be uploaded.
 ///
 /// \param metadata <code>StorageMetadata</code> containing additional information (MIME type, etc.)
@@ -595,10 +600,12 @@ SWIFT_CLASS_NAMED("StorageReference")
 - (FIRStorageUploadTask * _Nonnull)putFile:(NSURL * _Nonnull)fileURL metadata:(FIRStorageMetadata * _Nullable)metadata;
 /// Asynchronously uploads a file to the currently specified <code>StorageReference</code>,
 /// without additional metadata.
+/// <code>putData</code> should be used instead of <code>putFile</code> in Extensions.
 /// @param fileURL A URL representing the system file path of the object to be uploaded.
 /// @return An instance of StorageUploadTask, which can be used to monitor or manage the upload.
 - (FIRStorageUploadTask * _Nonnull)putFile:(NSURL * _Nonnull)fileURL;
 /// Asynchronously uploads a file to the currently specified <code>StorageReference</code>.
+/// <code>putData</code> should be used instead of <code>putFile</code> in Extensions.
 /// \param fileURL A URL representing the system file path of the object to be uploaded.
 ///
 /// \param metadata <code>StorageMetadata</code> containing additional information (MIME type, etc.)
@@ -704,7 +711,7 @@ SWIFT_CLASS_NAMED("StorageReference")
 /// \param completion A completion block which returns a nonnull error on failure. 
 ///
 - (void)deleteWithCompletion:(void (^ _Nullable)(NSError * _Nullable))completion;
-- (FIRStorageReference * _Nonnull)copy:(struct _NSZone * _Nonnull)zone SWIFT_WARN_UNUSED_RESULT;
+- (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly) NSUInteger hash;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
