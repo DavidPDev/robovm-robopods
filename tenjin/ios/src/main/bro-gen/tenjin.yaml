@@ -1,0 +1,78 @@
+package: org.robovm.pods.tenjin
+framework: Tenjin
+include: [foundation, uikit, storekit]
+clang_args: ['-x', 'objective-c']
+headers: 
+    - TenjinSDK.h
+enums:
+
+private_typedefs:
+    'GADAdValue *': org.robovm.pods.google.mobileads.GADAdValue
+
+classes:
+    TenjinSDK:
+        methods:
+            '-initWithToken:andSharedSecret:andAppSubversion:andDeferredDeeplink:ping:':
+                name: init
+            '+init:andSharedSecret:':
+                name: init
+            '+init:andAppSubversion:':
+                name: init
+            '+init:andSharedSecret:andAppSubversion:':
+                name: init
+            '+initialize:andSharedSecret:':
+                name: initialize
+            '+initialize:andAppSubversion:':
+                name: initialize
+            '+initialize:andSharedSecret:andAppSubversion:':
+                name: initialize
+            '+getInstance:andSharedSecret:':
+                name: getInstance
+            '+getInstance:andAppSubversion:':
+                name: getInstance
+            '+getInstance:andSharedSecret:andAppSubversion:':
+                name: getInstance
+            '+sharedInstanceWithToken:':
+                name: sharedInstance
+            '+sharedInstanceWithToken:andDeferredDeeplink:':
+                name: sharedInstance
+            '+connectWithDeferredDeeplink:':
+                name: connect
+            '+sendEventWithName:':
+                name: sendEvent
+            '+sendEventWithName:andEventValue:':
+                name: sendEvent
+            '+transaction:andReceipt:':
+                name: transaction
+            '+transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:':
+                name: transaction
+            '+transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:andTransactionId:andReceipt:':
+                name: transaction
+            '+transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:andTransactionId:andBase64Receipt:':
+                name: transaction
+            '+setValue:forKey:':
+                name: setValue
+            '+requestTrackingAuthorizationWithCompletionHandler:':
+                name: requestTrackingAuthorization
+            '+handleAdMobILRD::':
+                name: handleAdMobILRD
+protocols:
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'

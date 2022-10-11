@@ -410,10 +410,37 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 1. expected location ${artifactLocation}
             """.trimIndent(),
         )
-    }
+    },
+    "Tenjin" to { lib ->
+        val artifactLocation = downloadFolder.extend("tenjin-ios-sdk")
+        val tenjinvVersion: String by lazy {
+            artifactLocation.extend("TenjinSDK.h").readLines()
+                .find{ it.contains(" Version ") }
+                ?.substringAfterLast(" ")
+                ?: error("Filed to evaluate $lib version")
+        }
+        processFramework(
+            artifact = "$lib.lib",
+            moduleFolder = "tenjin/ios",
+            sourceHeadersDir = artifactLocation,
+            yaml = "tenjin.yaml",
+            version = { tenjinvVersion },
+            instruction = """
+                0. download latest version from https://github.com/tenjin/tenjin-ios-sdk/releases
+                1. unpack and rename to ${downloadFolder.extend("tenjin-ios-sdk")}
+                1. expected location ${artifactLocation}
+            """.trimIndent(),
+            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
+                copyHeadersFiltered(frm, sourceHeadersDir, destinationHeadersDir, flatten = true) {
+                    it.fileName.toString().endsWith(".h")
+                }
+            }
+        )
+    },
 
 
-).also {
+
+    ).also {
     registerAppCenter(it, knownGroups)
     registerFirebase(it, knownGroups)
     registerFacebook(it, knownGroups)
