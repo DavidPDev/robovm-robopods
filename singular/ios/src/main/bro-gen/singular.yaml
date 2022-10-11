@@ -7,6 +7,8 @@ headers:
     - SingularAdData.h
     - SingularConfig.h
     - SingularLinkParams.h
+    - Attributes.h
+    - Events.h
 enums:
 
 private_typedefs:
@@ -80,6 +82,10 @@ classes:
                     0: { name: v }
             '+setMinSessionDuration:':
                 name: setMinimalSessionDuration
+            '+createReferrerShortLink:referrerName:referrerId:completionHandler:':
+                name: createReferrerShortLink
+            '+createReferrerShortLink:referrerName:referrerId:passthroughParams:completionHandler:':
+                name: createReferrerShortLink
     SingularAdData:
         methods:
             '-initWithAdPlatfrom:withCurrency:withRevenue:':
@@ -111,6 +117,15 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    EVENT_SNG_(.*):
+        class: Singular
+        static_class: Events
+        name: '#{g[0]}'
+    ATTRIBUTE_SNG_ATTR_(.*):
+        class: Singular
+        static_class: Attributes
+        name: '#{g[0]}'
+
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):
         class: __FixMe

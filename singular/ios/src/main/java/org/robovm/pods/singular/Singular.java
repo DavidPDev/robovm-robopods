@@ -42,7 +42,72 @@ import org.robovm.apple.uikit.*;
 
     /*<ptr>*/public static class SingularPtr extends Ptr<Singular, SingularPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(Singular.class); }/*</bind>*/
-    /*<constants>*//*</constants>*/
+    /*<constants>*/
+    public static class Attributes {
+        public static final String FROM_DATE = "sng_attr_from_date";
+        public static final String TO_DATE = "sng_attr_to_date";
+        public static final String ACHIEVEMENT_ID = "sng_attr_achievement_id";
+        public static final String CONTENT = "sng_attr_content";
+        public static final String CONTENT_ID = "sng_attr_content_id";
+        public static final String CONTENT_LIST = "sng_attr_content_list";
+        public static final String CONTENT_TYPE = "sng_attr_content_type";
+        public static final String COUPON_CODE = "sng_attr_coupon_code";
+        public static final String DEEP_LINK = "sng_attr_deep_link";
+        public static final String EVENT_END = "sng_attr_event_end";
+        public static final String EVENT_START = "sng_attr_event_start";
+        public static final String HOTEL_SCORE = "sng_attr_hotel_score";
+        public static final String ITEM_DESCRIPTION = "sng_attr_item_description";
+        public static final String ITEM_PRICE = "sng_attr_item_price";
+        public static final String LATITUDE = "sng_attr_latitude";
+        public static final String LEVEL = "sng_attr_level";
+        public static final String LOCATION = "sng_attr_location";
+        public static final String LOCATION_ADDRESS_COUNTRY = "sng_attr_location_address_country";
+        public static final String LOCATION_ADDRESS_REGION_OR_PROVINCE = "sng_attr_location_address_region_or_province";
+        public static final String LOCATION_ADDRESS_STREET = "sng_attr_location_address_street";
+        public static final String LONGITUDE = "sng_attr_longitude";
+        public static final String MAX = "sng_attr_max";
+        public static final String NEW_VERSION = "sng_attr_new_version";
+        public static final String ORIGIN = "sng_attr_origin";
+        public static final String PAYMENT_INFO_AVAILABLE = "sng_attr_payment_info_available";
+        public static final String QUANTITY = "sng_attr_quantity";
+        public static final String RATING = "sng_attr_rating";
+        public static final String REGISTRATION_METHOD = "sng_attr_registration_method";
+        public static final String REVIEW_TEXT = "sng_attr_review_text";
+        public static final String SCORE = "sng_attr_score";
+        public static final String SEARCH_STRING = "sng_attr_search_string";
+        public static final String SUBSCRIPTION_ID = "sng_attr_subscription_id";
+        public static final String SUCCESS = "sng_attr_success";
+        public static final String TRANSACTION_ID = "sng_attr_transaction_id";
+        public static final String TUTORIAL_ID = "sng_attr_tutorial_id";
+        public static final String VALID = "sng_attr_valid";
+    }
+
+    public static class Events {
+        public static final String RATE = "sng_rate";
+        public static final String SPENT_CREDITS = "sng_spent_credits";
+        public static final String TUTORIAL_COMPLETE = "sng_tutorial_complete";
+        public static final String LOGIN = "sng_login";
+        public static final String START_TRIAL = "sng_start_trial";
+        public static final String SUBSCRIBE = "sng_subscribe";
+        public static final String BOOK = "sng_book";
+        public static final String CONTENT_VIEW_LIST = "sng_content_view_list";
+        public static final String INVITE = "sng_invite";
+        public static final String SHARE = "sng_share";
+        public static final String SUBMIT_APPLICATION = "sng_submit_application";
+        public static final String UPDATE = "sng_update";
+        public static final String ECOMMERCE_PURCHASE = "sng_ecommerce_purchase";
+        public static final String VIEW_CART = "sng_view_cart";
+        public static final String ACHIEVEMENT_UNLOCKED = "sng_achievement_unlocked";
+        public static final String ADD_PAYMENT_INFO = "sng_add_payment_info";
+        public static final String ADD_TO_CART = "sng_add_to_cart";
+        public static final String ADD_TO_WISHLIST = "sng_add_to_wishlist";
+        public static final String CHECKOUT_INITIATED = "sng_checkout_initiated";
+        public static final String COMPLETE_REGISTRATION = "sng_complete_registration";
+        public static final String CONTENT_VIEW = "sng_content_view";
+        public static final String LEVEL_ACHIEVED = "sng_level_achieved";
+        public static final String SEARCH = "sng_search";
+    }
+    /*</constants>*/
     /*<constructors>*/
     public Singular() {}
     protected Singular(Handle h, long handle) { super(h, handle); }
@@ -206,5 +271,9 @@ import org.robovm.apple.uikit.*;
     public static native boolean isSingularLink(NSObject linkHolder);
     @Method(selector = "adRevenue:")
     public static native void adRevenue(SingularAdData adData);
+    @Method(selector = "createReferrerShortLink:referrerName:referrerId:completionHandler:")
+    public static native void createReferrerShortLink(String baseLink, String referrerName, String referrerId, @Block VoidBlock2<NSString, NSError> completionHandler);
+    @Method(selector = "createReferrerShortLink:referrerName:referrerId:passthroughParams:completionHandler:")
+    public static native void createReferrerShortLink(String baseLink, String referrerName, String referrerId, NSDictionary<?, ?> passthroughParams, @Block VoidBlock2<NSString, NSError> completionHandler);
     /*</methods>*/
 }
