@@ -36,22 +36,22 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie13AnimationView")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/AnimationView/*</name>*/ 
-    extends /*<extends>*/AnimationViewBase/*</extends>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie19LottieAnimationView")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/LottieAnimationView/*</name>*/ 
+    extends /*<extends>*/LottieAnimationViewBase/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class AnimationViewPtr extends Ptr<AnimationView, AnimationViewPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(AnimationView.class); }/*</bind>*/
+    /*<ptr>*/public static class LottieAnimationViewPtr extends Ptr<LottieAnimationView, LottieAnimationViewPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(LottieAnimationView.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public AnimationView() {}
-    protected AnimationView(Handle h, long handle) { super(h, handle); }
-    protected AnimationView(SkipInit skipInit) { super(skipInit); }
+    public LottieAnimationView() {}
+    protected LottieAnimationView(Handle h, long handle) { super(h, handle); }
+    protected LottieAnimationView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public AnimationView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
+    public LottieAnimationView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public AnimationView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
+    public LottieAnimationView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "intrinsicContentSize")

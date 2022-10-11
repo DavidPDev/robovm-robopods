@@ -36,22 +36,22 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie17AnimationViewBase")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/AnimationViewBase/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie23LottieAnimationViewBase")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/LottieAnimationViewBase/*</name>*/ 
     extends /*<extends>*/UIView/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class AnimationViewBasePtr extends Ptr<AnimationViewBase, AnimationViewBasePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(AnimationViewBase.class); }/*</bind>*/
+    /*<ptr>*/public static class LottieAnimationViewBasePtr extends Ptr<LottieAnimationViewBase, LottieAnimationViewBasePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(LottieAnimationViewBase.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public AnimationViewBase() {}
-    protected AnimationViewBase(Handle h, long handle) { super(h, handle); }
-    protected AnimationViewBase(SkipInit skipInit) { super(skipInit); }
+    public LottieAnimationViewBase() {}
+    protected LottieAnimationViewBase(Handle h, long handle) { super(h, handle); }
+    protected LottieAnimationViewBase(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public AnimationViewBase(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
+    public LottieAnimationViewBase(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public AnimationViewBase(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
+    public LottieAnimationViewBase(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "contentMode")

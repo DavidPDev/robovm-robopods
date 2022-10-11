@@ -40,7 +40,6 @@ classes:
                 name: init
             '-initWithCoder:':
                 name: init
-    AnimationView: {}
     CompatibleAnimation:
         methods:
             '-initWithName:bundle:':
@@ -132,7 +131,6 @@ classes:
         methods:
             '-initWithCoder:':
                 name: init
-    AnimationViewBase: {}
     BaseAnimationLayer: {}
     BaseCompositionLayer: {}
     CoreAnimationLayer: {}
@@ -148,6 +146,8 @@ classes:
     SolidLayer: {}
     TransformLayer: {}
     RepeaterLayer: {}
+    LottieAnimationView: {}
+    LottieAnimationViewBase: {}
 protocols: {}
 
 

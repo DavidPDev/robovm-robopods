@@ -328,36 +328,6 @@ SWIFT_CLASS("_TtC6Lottie16AnimationSubview")
 @end
 
 
-/// The base view for <code>AnimationView</code> on iOS, tvOS, watchOS, and macCatalyst.
-/// Enables the <code>AnimationView</code> implementation to be shared across platforms.
-SWIFT_CLASS("_TtC6Lottie17AnimationViewBase")
-@interface AnimationViewBase : UIView
-@property (nonatomic) UIViewContentMode contentMode;
-- (void)didMoveToWindow;
-- (void)layoutSubviews;
-- (void)animationWillMoveToBackground;
-- (void)animationWillEnterForeground;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSString;
-
-IB_DESIGNABLE
-SWIFT_CLASS("_TtC6Lottie13AnimationView")
-@interface AnimationView : AnimationViewBase
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic, readonly) CGSize intrinsicContentSize;
-/// Set animation name from Interface Builder
-@property (nonatomic, copy) IBInspectable NSString * _Nullable animationName;
-- (void)animationWillMoveToBackground;
-- (void)animationWillEnterForeground;
-@end
-
-
-
-
 /// A base <code>CALayer</code> that manages the frame and animations
 /// of its <code>sublayers</code> and <code>mask</code>
 SWIFT_CLASS("_TtC6Lottie18BaseAnimationLayer")
@@ -400,6 +370,7 @@ SWIFT_CLASS("_TtC6Lottie20BaseCompositionLayer")
 
 
 
+@class NSString;
 @class NSBundle;
 
 /// An Objective-C compatible wrapper around Lottie’s Animation class.
@@ -426,7 +397,7 @@ SWIFT_CLASS("_TtC6Lottie26CompatibleAnimationKeypath")
 
 @class UIColor;
 
-/// An Objective-C compatible wrapper around Lottie’s AnimationView.
+/// An Objective-C compatible wrapper around Lottie’s LottieAnimationView.
 SWIFT_CLASS("_TtC6Lottie23CompatibleAnimationView")
 @interface CompatibleAnimationView : UIView
 - (nonnull instancetype)initWithCompatibleAnimation:(CompatibleAnimation * _Nonnull)compatibleAnimation OBJC_DESIGNATED_INITIALIZER;
@@ -582,6 +553,35 @@ SWIFT_CLASS("_TtC6Lottie18InvertedMatteLayer")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+/// The base view for <code>LottieAnimationView</code> on iOS, tvOS, watchOS, and macCatalyst.
+/// Enables the <code>LottieAnimationView</code> implementation to be shared across platforms.
+SWIFT_CLASS("_TtC6Lottie23LottieAnimationViewBase")
+@interface LottieAnimationViewBase : UIView
+@property (nonatomic) UIViewContentMode contentMode;
+- (void)didMoveToWindow;
+- (void)layoutSubviews;
+- (void)animationWillMoveToBackground;
+- (void)animationWillEnterForeground;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC6Lottie19LottieAnimationView")
+@interface LottieAnimationView : LottieAnimationViewBase
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+/// Set animation name from Interface Builder
+@property (nonatomic, copy) IBInspectable NSString * _Nullable animationName;
+- (void)animationWillMoveToBackground;
+- (void)animationWillEnterForeground;
+@end
+
+
 
 
 /// The base <code>CALayer</code> for the Main Thread rendering engine
