@@ -437,7 +437,21 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             }
         )
     },
-
+    "CleverAdsSolutions" to { framework ->
+        val artifactLocation = downloadFolder.extend("CleverAdsSolutionsBase/CASBase/CleverAdsSolutions.xcframework/ios-arm64/$framework.framework")
+        processFramework(
+            artifact = "$framework.framework",
+            moduleFolder = "clearads/ios",
+            sourceHeadersDir = artifactLocation.headers,
+            yaml = "clearads.yaml",
+            version = { artifactLocation.infoPlist.extractVersion() },
+            instruction = """
+                0. download latest CleverAdsSolutionsBase.tar.gz from https://github.com/cleveradssolutions/CAS-iOS/releases/
+                1. unpack
+                2. expected location ${artifactLocation}
+            """.trimIndent(),
+        )
+    },
 
 
     ).also {

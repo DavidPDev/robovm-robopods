@@ -18,6 +18,7 @@ This is the list of currently available AltPods. Click them to get more informat
 | [Azure](azure/)                 | Microsoft Azure SDKs                                                                                                                                               |
 | [BranchMetrics](branchmetrics/) | The Branch Metrics iOS SDK for deferred and contextual mobile deep linking                                                                                         |
 | [Charts](charts/)               | Beautiful charts for iOS/tvOS/OSX! The Apple side of the crossplatform MPAndroidChart.                                                                             |
+| [CleverAdsSolutions](clearads/) | Clever Ads Solutions iOS SDK                                                                                                                                       |
 | [Facebook](facebook/)           | Used to integrate the Facebook Platform with your iOS & tvOS apps                                                                                                  |
 | [Firebase](firebase/)           | Firebase (analytics, databases, mobile ads)                                                                                                                        |
 | [Flurry](flurry/)               | Flurry analytics, ads, remote config and push                                                                                                                      |
@@ -47,6 +48,7 @@ v1.26.0 - in development
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 1.43.2  |
 | [Charts](charts/)               | 4.1.0   |
+| [ClearAds](clearads/)           | 2.9.3   |
 | [Facebook](facebook/)           | 15.0.0  |
 | [Firebase](firebase/)           | 10.0.0  |
 | [Flurry](flurry/)               | 11.2.1  |
