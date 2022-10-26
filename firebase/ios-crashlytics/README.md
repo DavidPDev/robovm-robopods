@@ -8,8 +8,9 @@
 
 Plus ones required for ios-core module:
 * FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
 * GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* PromisesObjC.framework (from Firebase.zip/FirebaseAnalytics/PromisesObjC.xcframework)
+* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
 
 ### Way to report uncaught Java exception
 Firebase provides `FIRExceptionModel` to report not native exceptions and display proper lines/function names. To use this approach register handler by invoking `FIRCrashlytics.registerDefaultJavaUncaughtExceptionHandler()`. More details in [blog post](https://dkimitsa.github.io/2020/07/08/firebase-and-java-stacktraces/).

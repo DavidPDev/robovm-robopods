@@ -11,8 +11,9 @@
   
 Plus ones required for ios-core module:
 * FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
 * GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* PromisesObjC.framework (from Firebase.zip/FirebaseAnalytics/PromisesObjC.xcframework)
+* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 
