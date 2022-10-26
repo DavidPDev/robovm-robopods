@@ -4,15 +4,5 @@
         <framework>AppAuth</framework>
         <framework>GTMAppAuth</framework>
         <framework>GTMSessionFetcher</framework>
-
-        <!-- from modulemap -->
-        <framework>AuthenticationServices</framework>
-        <framework>CoreGraphics</framework>
-        <framework>CoreText</framework>
-        <framework>Foundation</framework>
-        <framework>LocalAuthentication</framework>
-        <framework>SafariServices</framework>
-        <framework>Security</framework>
-        <framework>UIKit</framework>
     </frameworks>
 </config>

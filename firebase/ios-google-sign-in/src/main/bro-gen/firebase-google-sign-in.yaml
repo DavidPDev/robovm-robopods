@@ -33,6 +33,9 @@ classes:
             '-imageURLWithDimension:':
                 name: getImageURL
     GIDSignIn:
+        properties:
+            'sharedInstance':
+                getter: sharedInstance
         methods:
             '-restorePreviousSignInWithCallback:':
                 name: restorePreviousSignIn

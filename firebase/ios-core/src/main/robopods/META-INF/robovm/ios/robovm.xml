@@ -3,6 +3,6 @@
         <framework>FirebaseCore</framework>
         <framework>FirebaseCoreInternal</framework>
         <framework>GoogleUtilities</framework>
-        <framework>PromisesObjC</framework>
+        <framework>FBLPromises</framework>
     </frameworks>
 </config>

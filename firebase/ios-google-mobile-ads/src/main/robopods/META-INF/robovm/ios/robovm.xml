@@ -4,7 +4,7 @@
         <framework>GoogleAppMeasurement</framework>
         <framework>nanopb</framework>
         <framework>GoogleUtilities</framework>
-        <framework>PromisesObjC</framework>
+        <framework>FBLPromises</framework>
         <framework>JavaScriptCore</framework>
     </frameworks>
     <exportedSymbols>

@@ -2,5 +2,7 @@
     <frameworks>
         <framework>FirebaseMessaging</framework>
         <framework>FirebaseInstallations</framework>
+        <framework>GoogleDataTransport</framework>
+        <framework>nanopb</framework>
     </frameworks>
 </config>
